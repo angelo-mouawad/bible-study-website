@@ -53,12 +53,12 @@ export function BookChapterPicker({ open, current, onClose, onSelect }: Props) {
                     onClick={() => onSelect({ book: chosen.id, chapter: c })}
                     aria-current={isCurrent ? 'true' : undefined}
                     aria-label={`Chapter ${c}${status === 'completed' ? ', read' : status === 'in-progress' ? ', in progress' : ''}`}
-                    className={`relative flex h-14 w-full items-center justify-center rounded-xl border-2 text-lg font-bold transition-colors ${
+                    className={`tabular relative flex h-14 w-full items-center justify-center rounded-2xl border-2 font-display text-lg font-semibold transition-colors ${
                       isCurrent
-                        ? 'border-accent bg-accent text-accent-ink'
+                        ? 'border-cocoa bg-cocoa text-paper'
                         : status === 'completed'
-                          ? 'border-accent-soft bg-accent-soft text-accent hover:border-accent'
-                          : 'border-line text-ink hover:border-accent'
+                          ? 'border-transparent bg-accent-soft text-accent hover:border-sand'
+                          : 'border-line bg-surface text-ink hover:border-sand'
                     }`}
                   >
                     {c}
@@ -83,14 +83,14 @@ export function BookChapterPicker({ open, current, onClose, onSelect }: Props) {
             onChange={(e) => setFilter(e.target.value)}
             placeholder="Type a book name"
             autoComplete="off"
-            className="mb-5 min-h-12 w-full rounded-xl border-2 border-line bg-paper px-4 text-lg text-ink placeholder:text-muted"
+            className="mb-5 min-h-14 w-full rounded-full border border-line bg-paper px-5 text-lg text-ink placeholder:text-muted"
           />
           {(['OT', 'NT'] as const).map((t) => {
             const books = filtered.filter((b) => b.testament === t);
             if (!books.length) return null;
             return (
               <section key={t} className="mb-6">
-                <h3 className="mb-2 font-serif text-lg font-semibold text-muted">
+                <h3 className="mb-3 font-display text-base font-semibold text-muted">
                   {t === 'OT' ? 'Old Testament' : 'New Testament'}
                 </h3>
                 <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -99,8 +99,8 @@ export function BookChapterPicker({ open, current, onClose, onSelect }: Props) {
                       <button
                         type="button"
                         onClick={() => (b.chapters === 1 ? onSelect({ book: b.id, chapter: 1 }) : setBook(b.id))}
-                        className={`flex min-h-12 w-full items-center rounded-xl px-3 text-left text-lg transition-colors ${
-                          b.id === current.book ? 'bg-accent-soft font-bold text-accent' : 'text-ink hover:bg-accent-soft'
+                        className={`flex min-h-12 w-full items-center rounded-2xl px-4 text-left text-lg transition-colors ${
+                          b.id === current.book ? 'bg-cocoa font-bold text-paper' : 'bg-surface/60 text-ink ring-1 ring-line hover:bg-accent-soft'
                         }`}
                       >
                         {b.name}

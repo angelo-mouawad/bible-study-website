@@ -24,13 +24,13 @@ export function PlanDayCard({ plan, day, nav, featured = false }: Props) {
   const markDone = () => actions.setPlanDay(plan.id, day.day, true, day.readings);
 
   return (
-    <div className={featured ? 'rounded-2xl border-2 border-accent-soft bg-surface p-5 sm:p-6' : 'py-1'}>
+    <div className={featured ? 'glass rounded-[28px] p-5 ring-2 ring-sand/60 sm:p-7' : 'py-1'}>
       <div className="flex items-start gap-3">
         <span
           aria-hidden="true"
-          className={`mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-base font-bold ${
-            done ? 'bg-accent text-accent-ink' : 'border-2 border-line text-muted'
-          }`}
+          className={`tabular mt-1 flex shrink-0 items-center justify-center rounded-2xl font-display font-semibold ${
+            featured ? 'h-14 w-14 text-xl' : 'h-10 w-10 text-base'
+          } ${done ? 'bg-cocoa text-paper' : featured ? 'bg-gradient-to-br from-accent to-cocoa text-accent-ink' : 'bg-accent-soft text-muted'}`}
         >
           {done ? <Icon name="check" className="h-5 w-5" /> : day.day}
         </span>
@@ -39,7 +39,7 @@ export function PlanDayCard({ plan, day, nav, featured = false }: Props) {
             Day {day.day}
             <span className="sr-only">{done ? ', completed' : ', not completed'}</span>
           </p>
-          <h3 className={`font-serif font-semibold text-ink ${featured ? 'text-2xl' : 'text-xl'}`}>
+          <h3 className={`font-display font-semibold tracking-[-0.01em] text-ink ${featured ? 'text-2xl' : 'text-lg'}`}>
             {day.title ?? formatReadings(day.readings)}
           </h3>
           {day.title && <p className="mt-0.5 text-lg text-ink">{formatReadings(day.readings)}</p>}
@@ -67,7 +67,7 @@ export function PlanDayCard({ plan, day, nav, featured = false }: Props) {
           )}
 
           {alreadyRead && (
-            <p className="mt-3 flex items-start gap-2 rounded-xl bg-accent-soft px-4 py-3 text-base text-ink">
+            <p className="mt-3 flex items-start gap-2 rounded-2xl bg-accent-soft px-4 py-3 text-base text-ink">
               <Icon name="check" className="mt-0.5 h-5 w-5 text-accent" />
               You've already read {day.readings.length > 1 ? 'these chapters' : 'this chapter'}. You can mark the day complete
               without reading it again.

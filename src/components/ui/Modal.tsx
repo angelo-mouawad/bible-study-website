@@ -40,7 +40,7 @@ export function Modal({ open, onClose, title, children, size = 'small' }: ModalP
       {open && (
         <div className="flex max-h-[inherit] flex-col">
           <header className="flex items-center justify-between gap-4 border-b border-line px-5 py-3">
-            <h2 id={titleId} className="font-serif text-xl font-semibold text-ink">
+            <h2 id={titleId} className="font-display text-xl font-semibold tracking-[-0.01em] text-ink">
               {title}
             </h2>
             <button type="button" className={btn.icon} onClick={onClose} aria-label="Close">

@@ -17,8 +17,8 @@ const WIDTHS: { id: ReadingWidth; label: string }[] = [
 ];
 
 const option = (active: boolean) =>
-  `flex min-h-12 flex-1 items-center justify-center gap-2 rounded-xl border-2 px-3 font-bold transition-colors ${
-    active ? 'border-accent bg-accent-soft text-accent' : 'border-line text-ink hover:border-accent'
+  `flex min-h-12 flex-1 items-center justify-center gap-2 rounded-full border px-3 font-bold transition-all ${
+    active ? 'border-cocoa bg-cocoa text-paper' : 'border-line bg-surface text-ink hover:border-sand hover:bg-accent-soft'
   }`;
 
 export function SettingsDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -29,7 +29,7 @@ export function SettingsDialog({ open, onClose }: { open: boolean; onClose: () =
     <Modal open={open} onClose={onClose} title="Reading settings">
       <div className="space-y-7">
         <fieldset>
-          <legend className="mb-2 text-lg font-bold">Text size</legend>
+          <legend className="mb-2 font-display text-lg font-semibold">Text size</legend>
           <div className="flex items-center gap-3">
             <button
               type="button"
@@ -38,7 +38,7 @@ export function SettingsDialog({ open, onClose }: { open: boolean; onClose: () =
               disabled={prefs.fontSize <= 14}
               aria-label="Make text smaller"
             >
-              <span className="font-serif text-lg">A</span> Smaller
+              <span className="font-display text-lg">A</span> Smaller
             </button>
             <output className="w-14 text-center text-lg font-bold" aria-live="polite">
               {prefs.fontSize}
@@ -50,16 +50,16 @@ export function SettingsDialog({ open, onClose }: { open: boolean; onClose: () =
               disabled={prefs.fontSize >= 34}
               aria-label="Make text larger"
             >
-              <span className="font-serif text-2xl">A</span> Larger
+              <span className="font-display text-2xl">A</span> Larger
             </button>
           </div>
-          <p className="scripture mt-4 rounded-xl bg-paper p-4 text-ink" style={{ fontSize: prefs.fontSize }}>
+          <p className="scripture mt-4 rounded-2xl bg-accent-soft/60 p-4 text-ink" style={{ fontSize: prefs.fontSize }}>
             Thy word is a lamp unto my feet, and a light unto my path.
           </p>
         </fieldset>
 
         <fieldset>
-          <legend className="mb-2 text-lg font-bold">Colours</legend>
+          <legend className="mb-2 font-display text-lg font-semibold">Colours</legend>
           <div className="flex flex-wrap gap-2">
             {THEMES.map((t) => (
               <button
@@ -76,7 +76,7 @@ export function SettingsDialog({ open, onClose }: { open: boolean; onClose: () =
         </fieldset>
 
         <fieldset>
-          <legend className="mb-2 text-lg font-bold">Reading width</legend>
+          <legend className="mb-2 font-display text-lg font-semibold">Reading width</legend>
           <div className="flex gap-2">
             {WIDTHS.map((w) => (
               <button
@@ -108,7 +108,7 @@ export function SettingsDialog({ open, onClose }: { open: boolean; onClose: () =
           </label>
           <select
             id="translation"
-            className="min-h-12 w-full rounded-xl border-2 border-line bg-surface px-3 text-lg text-ink"
+            className="min-h-12 w-full rounded-full border border-line bg-surface px-4 text-lg text-ink"
             value={prefs.translation}
             onChange={(e) => actions.setPreferences({ translation: e.target.value })}
           >

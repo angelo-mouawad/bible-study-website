@@ -106,7 +106,7 @@ function Shell() {
         }
       />
 
-      <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-4 pb-32 pt-6 outline-none sm:px-6 md:pb-20">
+      <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-4 pb-36 pt-6 outline-none sm:px-6 md:pb-20">
         <ErrorBoundary resetKey={routeToHash(route)}>
           {route.view === 'home' && <HomeView nav={nav} />}
           {route.view === 'bible' && <ReaderView route={route} nav={nav} onOpenSettings={() => setSettingsOpen(true)} />}

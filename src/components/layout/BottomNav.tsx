@@ -4,11 +4,8 @@ import type { View } from '../../hooks/useRoute';
 
 export function BottomNav({ current, onNavigate }: { current: View; onNavigate: (view: View) => void }) {
   return (
-    <nav
-      aria-label="Main"
-      className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-surface pb-[env(safe-area-inset-bottom)] md:hidden"
-    >
-      <ul className="grid grid-cols-5">
+    <nav aria-label="Main" className="fixed inset-x-0 bottom-0 z-30 px-3 pb-[calc(0.6rem+env(safe-area-inset-bottom))] md:hidden">
+      <ul className="glass glass-strong mx-auto grid max-w-md grid-cols-5 rounded-[26px] p-1.5">
         {NAV_ITEMS.map((item) => {
           const active = item.view === current;
           return (
@@ -17,13 +14,11 @@ export function BottomNav({ current, onNavigate }: { current: View; onNavigate: 
                 type="button"
                 onClick={() => onNavigate(item.view)}
                 aria-current={active ? 'page' : undefined}
-                className={`flex h-16 w-full flex-col items-center justify-center gap-0.5 text-[0.8125rem] font-bold ${
-                  active ? 'text-accent' : 'text-muted'
+                className={`flex h-14 w-full flex-col items-center justify-center gap-0.5 rounded-[20px] text-[0.75rem] font-bold transition-all ${
+                  active ? 'bg-cocoa text-paper shadow-[0_8px_18px_-8px_rgb(61_42_28/0.7)]' : 'text-muted'
                 }`}
               >
-                <span className={`flex h-7 w-12 items-center justify-center rounded-full ${active ? 'bg-accent-soft' : ''}`}>
-                  <Icon name={item.icon} className="h-[22px] w-[22px]" />
-                </span>
+                <Icon name={item.icon} className="h-[21px] w-[21px]" />
                 {item.label}
               </button>
             </li>

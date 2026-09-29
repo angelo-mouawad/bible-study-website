@@ -1,10 +1,6 @@
 @import "tailwindcss";
 
-/*
-  Design tokens. Components only use these names (bg-paper, text-ink, border-line...),
-  so each theme is just a different set of values below.
-  Palette idea: olive wood and lamp oil ("Thy word is a lamp unto my feet", Psalm 119:105).
-*/
+/* Design tokens. Components only use these names (bg-paper, text-ink, border-line...). */
 @theme inline {
   --color-paper: var(--paper);
   --color-surface: var(--surface);
@@ -15,61 +11,95 @@
   --color-accent-strong: var(--accent-strong);
   --color-accent-ink: var(--accent-ink);
   --color-accent-soft: var(--accent-soft);
+  --color-sand: var(--sand);
+  --color-cocoa: var(--cocoa);
   --color-flame: var(--flame);
   --font-serif: "Literata", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  --font-sans: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", "Manrope", system-ui, sans-serif;
 }
 
+/*
+  Palette: warm whites, parchment beiges and roasted browns.
+  Components only use the token names, so each theme is just a different set of values.
+*/
 :root {
   color-scheme: light;
-  --paper: #f3f4ee;
-  --surface: #fbfbf8;
-  --ink: #1c211d;
-  --muted: #545b53;
-  --line: #d6d9ce;
-  --accent: #3e5c2b;
-  --accent-strong: #2f4720;
-  --accent-ink: #ffffff;
-  --accent-soft: #e3e9d6;
-  --flame: #b7791f;
-  --hl-yellow: #f8e98f;
-  --hl-green: #c6e6b5;
-  --hl-blue: #c3dcf3;
-  --hl-purple: #e0cff2;
-  --hl-red: #f4c9c3;
+  --paper: #f6f1e9;
+  --surface: #fffcf7;
+  --glass: rgb(255 252 247 / 0.72);
+  --glass-strong: rgb(255 252 247 / 0.93);
+  --glass-edge: rgb(255 255 255 / 0.9);
+  --ink: #2a1d13;
+  --muted: #76614d;
+  --line: #e7dccc;
+  --accent: #8b5e34;
+  --accent-strong: #6b4423;
+  --accent-ink: #fff9f1;
+  --accent-soft: #f2e7d7;
+  --sand: #d8c3a5;
+  --cocoa: #3d2a1c;
+  --flame: #c28a4a;
+  --shadow: 0 1px 0 rgb(255 255 255 / 0.8) inset, 0 18px 40px -24px rgb(74 48 25 / 0.35), 0 2px 6px -2px rgb(74 48 25 / 0.08);
+  --bg-glow-1: #ffffff;
+  --bg-glow-2: #ecdcc5;
+  --grid-dot: rgb(139 94 52 / 0.10);
+  --hl-yellow: #f7e39a;
+  --hl-green: #d3e6b8;
+  --hl-blue: #cfe0ee;
+  --hl-purple: #e5d5ec;
+  --hl-red: #f3cdbf;
 }
 
 [data-theme="dark"] {
   color-scheme: dark;
-  --paper: #121513;
-  --surface: #1a1e1b;
-  --ink: #e7e5dc;
-  --muted: #a3a99d;
-  --line: #313731;
-  --accent: #a9c587;
-  --accent-strong: #bfd6a1;
-  --accent-ink: #142010;
-  --accent-soft: #252f20;
-  --flame: #e0a64a;
-  --hl-yellow: #5b4f14;
-  --hl-green: #264a2b;
-  --hl-blue: #203d5c;
-  --hl-purple: #422f5a;
-  --hl-red: #5c2a25;
+  --paper: #16100b;
+  --surface: #211810;
+  --glass: rgb(38 28 20 / 0.72);
+  --glass-strong: rgb(38 28 20 / 0.94);
+  --glass-edge: rgb(255 235 210 / 0.08);
+  --ink: #f4ebdf;
+  --muted: #bba68f;
+  --line: #3b2d21;
+  --accent: #d6a773;
+  --accent-strong: #e8c091;
+  --accent-ink: #20150c;
+  --accent-soft: #33261a;
+  --sand: #6d5741;
+  --cocoa: #f0dcc3;
+  --flame: #e0a860;
+  --shadow: 0 1px 0 rgb(255 235 210 / 0.05) inset, 0 20px 40px -24px rgb(0 0 0 / 0.7);
+  --bg-glow-1: #2a1e14;
+  --bg-glow-2: #1b130c;
+  --grid-dot: rgb(214 167 115 / 0.07);
+  --hl-yellow: #5c4a17;
+  --hl-green: #34441f;
+  --hl-blue: #253c50;
+  --hl-purple: #45304f;
+  --hl-red: #5a2b20;
 }
 
 [data-theme="contrast"] {
   color-scheme: light;
   --paper: #ffffff;
   --surface: #ffffff;
+  --glass: #ffffff;
+  --glass-strong: #ffffff;
+  --glass-edge: #000000;
   --ink: #000000;
   --muted: #1f1f1f;
   --line: #000000;
-  --accent: #00338a;
-  --accent-strong: #001f57;
+  --accent: #5a3310;
+  --accent-strong: #3a1f06;
   --accent-ink: #ffffff;
-  --accent-soft: #e2ebfb;
+  --accent-soft: #f3e6d6;
+  --sand: #8a6a45;
+  --cocoa: #000000;
   --flame: #7a4300;
+  --shadow: none;
+  --bg-glow-1: #ffffff;
+  --bg-glow-2: #ffffff;
+  --grid-dot: transparent;
   --hl-yellow: #ffe94d;
   --hl-green: #8fe07a;
   --hl-blue: #8cc4ff;
@@ -84,11 +114,18 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  min-height: 100dvh;
+  background:
+    radial-gradient(60rem 40rem at 10% -10%, var(--bg-glow-1), transparent 60%),
+    radial-gradient(50rem 40rem at 110% 20%, var(--bg-glow-2), transparent 60%),
+    radial-gradient(circle at 1px 1px, var(--grid-dot) 1px, transparent 0) 0 0 / 22px 22px,
+    var(--paper);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 1.0625rem;
   line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
 
 :focus-visible {
@@ -102,6 +139,20 @@ body {
 }
 
 @layer components {
+/* Frosted panels: the main building block of the interface. */
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  backdrop-filter: blur(18px) saturate(1.3);
+}
+[data-theme="contrast"] .glass { border: 2px solid #000; }
+/* Denser glass for bars that float over text, so the text behind never competes. */
+.glass-strong { background: var(--glass-strong); }
+
+.tabular { font-variant-numeric: tabular-nums; }
+
 /* Scripture text. Serif body text gets a little more leading, per classic book typography. */
 .scripture {
   font-family: var(--font-serif);
@@ -132,21 +183,23 @@ body {
   max-height: 88dvh;
   padding: 0;
   border: 1px solid var(--line);
-  border-radius: 20px 20px 0 0;
+  border-radius: 28px 28px 0 0;
   background: var(--surface);
   color: var(--ink);
   box-shadow: 0 -12px 40px rgb(0 0 0 / 0.18);
 }
 .modal::backdrop {
-  background: rgb(10 14 11 / 0.5);
+  background: rgb(42 29 19 / 0.35);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 @media (min-width: 640px) {
   .modal {
     margin: auto;
     width: min(34rem, calc(100% - 2rem));
     max-height: 85dvh;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgb(0 0 0 / 0.25);
+    border-radius: 28px;
+    box-shadow: 0 30px 80px -20px rgb(61 42 28 / 0.45);
   }
   .modal-large {
     width: min(48rem, calc(100% - 2rem));

@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Icon } from '../ui/Icon';
-import { btn, heading } from '../ui/styles';
-import { ProgressBar } from '../ui/ProgressBar';
+import { btn, chip } from '../ui/styles';
+import { Ring } from '../ui/Ring';
 import { PlanDayCard } from './PlanDayCard';
 import { useStore } from '../../store/AppStore';
 import { planStatus } from '../../services/progress';
 import type { ReadingPlan } from '../../types/plans';
-import { planMeta } from '../../utils/references';
 import type { Nav } from '../../types/nav';
 
 const PAGE_SIZE = 30;
@@ -17,7 +16,7 @@ export function PlanDetail({ plan, focusDay, nav }: { plan: ReadingPlan; focusDa
   const status = planStatus(plan, progress);
   const featured = plan.days.find((d) => d.day === focusDay) ?? status.nextDay ?? plan.days[plan.days.length - 1];
   const pages = Math.ceil(plan.days.length / PAGE_SIZE);
-  const [page, setPage] = useState(() => Math.floor((plan.days.indexOf(featured) || 0) / PAGE_SIZE));
+  const [page, setPage] = useState(() => Math.max(0, Math.floor(plan.days.indexOf(featured) / PAGE_SIZE)));
 
   useEffect(() => {
     setPage(Math.max(0, Math.floor(plan.days.indexOf(featured) / PAGE_SIZE)));
@@ -27,64 +26,60 @@ export function PlanDetail({ plan, focusDay, nav }: { plan: ReadingPlan; focusDa
   const visible = useMemo(() => plan.days.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE), [plan.days, page]);
 
   return (
-    <div className="mx-auto max-w-3xl">
-      <button type="button" className={`${btn.quiet} -ml-3 mb-2`} onClick={() => nav.go({ view: 'plans' })}>
+    <div className="mx-auto max-w-4xl space-y-5">
+      <button type="button" className={`${btn.quiet} -ml-3`} onClick={() => nav.go({ view: 'plans' })}>
         <Icon name="left" /> All plans
       </button>
-      <h1 className={heading.page}>{plan.name}</h1>
-      <p className="mt-3 text-lg leading-relaxed text-muted">{plan.description}</p>
-      <p className="mt-2 text-base text-muted">
-        {planMeta(plan)}
-      </p>
 
-      {progress ? (
-        <div className="mt-6">
-          <div className="mb-2 flex justify-between text-base">
-            <span className="font-bold">
-              {status.finished ? 'Plan complete' : `Day ${status.nextDay?.day} of ${status.total}`}
-            </span>
-            <span className="text-muted">
-              {status.completedCount} of {status.total} days done
-            </span>
+      <header className="glass flex flex-col gap-6 rounded-[32px] p-6 sm:flex-row sm:items-center sm:p-8">
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap gap-2">
+            <span className={chip}>{plan.days.length} days</span>
+            <span className={chip}>{plan.difficulty}</span>
+            {plan.dailyTime && <span className={chip}>{plan.dailyTime}</span>}
           </div>
-          <ProgressBar value={status.completedCount} max={status.total} label={`${plan.name} progress`} />
+          <h1 className="mt-4 font-display text-[2rem] font-semibold leading-[1.1] tracking-[-0.02em] sm:text-[2.4rem]">{plan.name}</h1>
+          <p className="mt-3 max-w-xl text-lg leading-relaxed text-muted">{plan.description}</p>
+          {!progress && (
+            <button type="button" className={`${btn.primary} mt-5`} onClick={() => actions.startPlan(plan.id)}>
+              Start this plan
+            </button>
+          )}
         </div>
-      ) : (
-        <button type="button" className={`${btn.primary} mt-6`} onClick={() => actions.startPlan(plan.id)}>
-          Start this plan
-        </button>
-      )}
+        {progress && (
+          <div className="flex flex-col items-center gap-2 self-center">
+            <Ring value={status.completedCount} max={status.total} size={140} label={`${plan.name} progress`} />
+            <p className="tabular text-sm font-semibold text-muted">
+              {status.completedCount} of {status.total} days
+            </p>
+          </div>
+        )}
+      </header>
 
       {status.finished && progress ? (
-        <p className="mt-8 rounded-2xl bg-accent-soft p-5 text-lg text-ink">
-          You finished {plan.name}. Well done. You can look back over any day below, or choose another plan.
+        <p className="glass rounded-[28px] p-6 text-lg text-ink">
+          You finished {plan.name}. Well done. Look back over any day below, or choose another plan.
         </p>
       ) : (
-        <section aria-label="Current day" className="mt-8">
+        <section aria-label={focusDay ? `Day ${featured.day}` : 'Up next'}>
           <PlanDayCard plan={plan} day={featured} nav={nav} featured />
         </section>
       )}
 
-      <section aria-labelledby="all-days" className="mt-12">
-        <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-          <h2 id="all-days" className={heading.section}>
+      <section aria-labelledby="all-days" className="glass rounded-[28px] p-5 sm:p-6">
+        <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+          <h2 id="all-days" className="font-display text-lg font-semibold">
             All days
           </h2>
           {pages > 1 && (
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 rounded-full bg-accent-soft/70 p-1">
               <button type="button" className={btn.icon} disabled={page === 0} onClick={() => setPage(page - 1)} aria-label="Earlier days">
                 <Icon name="left" />
               </button>
-              <span className="min-w-28 text-center text-base text-muted">
+              <span className="tabular min-w-28 text-center text-sm font-bold text-muted">
                 Days {page * PAGE_SIZE + 1}-{Math.min(plan.days.length, (page + 1) * PAGE_SIZE)}
               </span>
-              <button
-                type="button"
-                className={btn.icon}
-                disabled={page >= pages - 1}
-                onClick={() => setPage(page + 1)}
-                aria-label="Later days"
-              >
+              <button type="button" className={btn.icon} disabled={page >= pages - 1} onClick={() => setPage(page + 1)} aria-label="Later days">
                 <Icon name="right" />
               </button>
             </div>
@@ -100,7 +95,7 @@ export function PlanDetail({ plan, focusDay, nav }: { plan: ReadingPlan; focusDa
       </section>
 
       {progress && (
-        <div className="mt-10 border-t border-line pt-6">
+        <div className="pt-2">
           <button
             type="button"
             className={btn.quiet}

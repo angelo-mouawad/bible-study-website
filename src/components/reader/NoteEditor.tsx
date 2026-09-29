@@ -38,7 +38,7 @@ export function NoteEditor({ open, reference, verseText, initialText, onSave, on
           rows={6}
           autoFocus
           placeholder="What stands out to you in this verse?"
-          className="w-full rounded-xl border-2 border-line bg-paper p-4 text-lg leading-relaxed text-ink placeholder:text-muted"
+          className="w-full rounded-[20px] border border-line bg-paper p-4 text-lg leading-relaxed text-ink placeholder:text-muted"
         />
         <div className="mt-4 flex flex-wrap justify-between gap-3">
           {initialText ? (

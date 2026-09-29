@@ -14,9 +14,12 @@ export function ProgressBar({ value, max, label, className = '' }: Props) {
       aria-valuemin={0}
       aria-valuemax={max}
       aria-valuenow={value}
-      className={`h-2.5 w-full overflow-hidden rounded-full bg-line ${className}`}
+      className={`h-2 w-full overflow-hidden rounded-full bg-line ${className}`}
     >
-      <div className="h-full rounded-full bg-accent transition-[width] duration-500" style={{ width: `${pct}%` }} />
+      <div
+        className="h-full rounded-full bg-gradient-to-r from-sand via-flame to-accent-strong transition-[width] duration-700"
+        style={{ width: `${pct > 0 ? Math.max(pct, 1.5) : 0}%` }}
+      />
     </div>
   );
 }

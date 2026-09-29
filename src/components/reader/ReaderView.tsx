@@ -24,9 +24,9 @@ import { passageText } from '../../utils/passage';
 import { formatRef, nextChapter, previousChapter, verseKey } from '../../utils/references';
 
 const WIDTH_CLASS: Record<ReadingWidth, string> = {
-  narrow: 'max-w-[34rem]',
-  medium: 'max-w-[42rem]',
-  wide: 'max-w-[56rem]',
+  narrow: 'max-w-[38rem]',
+  medium: 'max-w-[48rem]',
+  wide: 'max-w-[62rem]',
 };
 
 interface Props {
@@ -130,7 +130,7 @@ function ReaderToolbar({
   const prev = previousChapter(current);
   const next = nextChapter(current);
   return (
-    <div className="no-print sticky top-16 z-20 -mx-4 mb-4 flex items-center gap-1 border-b border-line bg-paper px-2 py-2 sm:-mx-6 sm:px-4">
+    <div className="no-print glass glass-strong sticky top-[5.25rem] z-20 mx-auto mb-5 flex max-w-3xl items-center gap-1 rounded-full p-1.5">
       <button
         type="button"
         className={btn.icon}
@@ -143,7 +143,7 @@ function ReaderToolbar({
       <button
         type="button"
         onClick={onPick}
-        className="flex min-h-12 min-w-0 items-center gap-1 rounded-full px-4 font-serif text-lg font-semibold text-ink hover:bg-accent-soft"
+        className="flex min-h-12 min-w-0 items-center gap-2 rounded-full bg-accent-soft/80 px-5 font-display text-lg font-semibold text-ink hover:bg-accent-soft"
         aria-label={`${title}. Choose book and chapter`}
       >
         <span className="truncate">{title}</span>
@@ -160,7 +160,7 @@ function ReaderToolbar({
       </button>
       <div className="ml-auto flex items-center">
         <button type="button" className={`${btn.ghost} px-3`} onClick={onSettings} aria-label="Text size and reading settings">
-          <span aria-hidden="true" className="font-serif text-lg">
+          <span aria-hidden="true" className="font-display text-lg">
             Aa
           </span>
         </button>
@@ -231,11 +231,14 @@ function Chapter({ book, chapter, route, nav, translationId }: ChapterProps) {
   const passage = selected.length ? passageText(book, book.id, chapter, selected, abbreviation) : null;
 
   return (
-    <article className={`mx-auto ${WIDTH_CLASS[prefs.width]}`} style={{ fontSize: `${prefs.fontSize}px` }}>
-      <header className="mb-6 mt-4 flex flex-wrap items-end justify-between gap-4">
-        <h1 className="font-serif leading-none text-ink">
-          <span className="block text-[0.9em] font-semibold text-muted">{canon.name}</span>
-          <span className="block text-[3.2em] font-semibold tracking-tight">{chapter}</span>
+    <article
+      className={`glass mx-auto rounded-[32px] px-3 pb-8 pt-6 sm:px-10 sm:pt-10 ${WIDTH_CLASS[prefs.width]}`}
+      style={{ fontSize: `${prefs.fontSize}px` }}
+    >
+      <header className="mb-8 flex flex-wrap items-end justify-between gap-4 border-b border-line px-2 pb-6">
+        <h1 className="font-display leading-none text-ink">
+          <span className="block text-[0.8em] font-bold uppercase tracking-[0.14em] text-accent">{canon.name}</span>
+          <span className="tabular block text-[3.4em] font-semibold tracking-[-0.04em]">{chapter}</span>
         </h1>
         <div className="flex flex-wrap items-center gap-2 font-sans text-base">
           <ChapterStatusControl value={status} onChange={(s) => actions.setChapterStatus({ book: book.id, chapter }, s)} />
@@ -289,7 +292,7 @@ function Chapter({ book, chapter, route, nav, translationId }: ChapterProps) {
       {route.planId && route.planDay ? (
         <PlanDayPanel planId={route.planId} day={route.planDay} current={{ book: book.id, chapter }} nav={nav} />
       ) : (
-        <footer className="no-print mt-12 flex flex-wrap items-center justify-center gap-3 border-t border-line pt-8 font-sans text-base">
+        <footer className="no-print mt-10 flex flex-wrap items-center justify-center gap-3 rounded-[24px] bg-accent-soft/70 p-5 font-sans text-base">
           {status === 'completed' ? (
             <p className="flex min-h-12 items-center gap-2 font-bold text-accent">
               <Icon name="check" /> You have read this chapter

@@ -12,7 +12,7 @@ interface Props {
 export function StatusMessage({ title, children, action, tone = 'info' }: Props) {
   return (
     <div role={tone === 'error' ? 'alert' : undefined} className="mx-auto max-w-lg py-10 text-center">
-      <p className="font-serif text-xl font-semibold text-ink">{title}</p>
+      <p className="font-display text-xl font-semibold text-ink">{title}</p>
       {children && <div className="mt-2 text-lg text-muted">{children}</div>}
       {action && (
         <button type="button" className={`${btn.secondary} mt-5`} onClick={action.onClick}>

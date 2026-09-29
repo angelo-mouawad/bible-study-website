@@ -26,11 +26,11 @@ export function VerseActions(props: Props) {
     <div
       role="region"
       aria-label={`Actions for ${label}`}
-      className="no-print fixed inset-x-0 bottom-[calc(4rem+env(safe-area-inset-bottom))] z-40 px-2 pb-2 md:bottom-4"
+      className="no-print fixed inset-x-0 bottom-[calc(5.4rem+env(safe-area-inset-bottom))] z-40 px-2 pb-2 md:bottom-4"
     >
-      <div className="mx-auto max-w-2xl rounded-2xl border border-line bg-surface p-3 shadow-[0_10px_40px_rgb(0_0_0/0.2)]">
+      <div className="glass glass-strong mx-auto max-w-2xl rounded-[28px] p-3 !shadow-[0_30px_60px_-20px_rgb(61_42_28/0.45)]">
         <div className="mb-2 flex items-center justify-between gap-2 px-1">
-          <p className="font-serif text-lg font-semibold text-ink">
+          <p className="font-display text-lg font-semibold text-ink">
             {label}
             {count > 1 && <span className="ml-2 font-sans text-base font-normal text-muted">{count} verses</span>}
           </p>
@@ -71,7 +71,7 @@ export function VerseActions(props: Props) {
           </div>
         </fieldset>
 
-        <div className="grid grid-cols-4 gap-1">
+        <div className="grid grid-cols-4 gap-1.5">
           <ActionButton icon="note" label={hasNote ? 'Edit note' : 'Note'} onClick={props.onNote} disabled={count !== 1} />
           <ActionButton icon="bookmark" label={bookmarked ? 'Saved' : 'Bookmark'} onClick={props.onBookmark} active={bookmarked} />
           <ActionButton icon="copy" label="Copy" onClick={props.onCopy} />
@@ -103,7 +103,7 @@ function ActionButton({
       disabled={disabled}
       aria-pressed={active}
       className={`flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl text-[0.9375rem] font-bold transition-colors disabled:opacity-40 ${
-        active ? 'bg-accent-soft text-accent' : 'text-ink hover:bg-accent-soft'
+        active ? 'bg-cocoa text-paper' : 'bg-surface/70 text-ink ring-1 ring-line hover:bg-accent-soft'
       }`}
     >
       <Icon name={icon} />

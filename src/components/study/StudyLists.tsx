@@ -215,7 +215,7 @@ export function BookmarksList({ book, nav }: ListProps) {
       {last && (
         <div className="mb-6 rounded-2xl bg-accent-soft p-4">
           <p className="text-base text-muted">Where you stopped reading</p>
-          <button type="button" className="mt-1 flex min-h-12 items-center gap-2 font-serif text-xl font-semibold text-accent" onClick={() => nav.openPassage(last)}>
+          <button type="button" className="mt-1 flex min-h-12 items-center gap-2 font-display text-xl font-semibold text-accent" onClick={() => nav.openPassage(last)}>
             {formatRef(last)} <Icon name="right" />
           </button>
         </div>

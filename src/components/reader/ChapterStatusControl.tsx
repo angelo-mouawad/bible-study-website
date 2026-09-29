@@ -11,7 +11,7 @@ export function ChapterStatusControl({ value, onChange }: { value: ChapterStatus
   return (
     <fieldset>
       <legend className="sr-only">Chapter status</legend>
-      <div className="inline-flex rounded-full border-2 border-line p-1">
+      <div className="inline-flex rounded-full bg-accent-soft/80 p-1">
         {OPTIONS.map((o) => {
           const active = o.id === value;
           return (
@@ -21,7 +21,7 @@ export function ChapterStatusControl({ value, onChange }: { value: ChapterStatus
               aria-pressed={active}
               onClick={() => onChange(o.id)}
               className={`flex min-h-10 items-center gap-1.5 rounded-full px-3 text-[0.9375rem] font-bold transition-colors ${
-                active ? 'bg-accent text-accent-ink' : 'text-muted hover:text-ink'
+                active ? 'bg-cocoa text-paper shadow-[0_4px_12px_-4px_rgb(61_42_28/0.5)]' : 'text-muted hover:text-ink'
               }`}
             >
               <Icon name={o.icon} className="h-4 w-4" />

@@ -96,7 +96,7 @@ export function SearchDialog({ open, initialQuery, onClose, nav }: Props) {
             autoComplete="off"
             enterKeyHint="search"
             placeholder="Try John 3:16, Genesis 1 or a word like love"
-            className="min-h-14 w-full rounded-2xl border-2 border-line bg-paper pl-12 pr-4 text-lg text-ink placeholder:text-muted"
+            className="min-h-14 w-full rounded-full border border-line bg-paper pl-12 pr-5 text-lg text-ink placeholder:text-muted"
           />
         </div>
         <div className="mt-3 flex flex-wrap items-center gap-2">
@@ -107,7 +107,7 @@ export function SearchDialog({ open, initialQuery, onClose, nav }: Props) {
             id="search-scope"
             value={scope}
             onChange={(e) => setScope(e.target.value)}
-            className="min-h-11 rounded-xl border-2 border-line bg-surface px-3 text-base text-ink"
+            className="min-h-11 rounded-full border border-line bg-surface px-4 text-base text-ink"
           >
             <option value="all">The whole Bible</option>
             <option value="OT">Old Testament</option>
@@ -139,11 +139,11 @@ export function SearchDialog({ open, initialQuery, onClose, nav }: Props) {
           <button
             type="button"
             onClick={() => openHit(reference)}
-            className="mb-5 flex w-full items-center justify-between gap-4 rounded-2xl bg-accent px-5 py-4 text-left text-accent-ink hover:bg-accent-strong"
+            className="mb-5 flex w-full items-center justify-between gap-4 rounded-[22px] bg-gradient-to-br from-cocoa to-accent px-5 py-4 text-left text-[#fff9f1] hover:brightness-110"
           >
             <span>
               <span className="block text-base opacity-90">Go to</span>
-              <span className="font-serif text-xl font-semibold">{formatRef(reference)}</span>
+              <span className="font-display text-xl font-semibold">{formatRef(reference)}</span>
             </span>
             <Icon name="right" />
           </button>
@@ -197,7 +197,7 @@ function SearchResults({
     if (hasReference) return null;
     return (
       <div className="py-6 text-center">
-        <p className="font-serif text-xl font-semibold">No verses contain "{query.replace(/"/g, '')}"</p>
+        <p className="font-display text-xl font-semibold">No verses contain "{query.replace(/"/g, '')}"</p>
         <p className="mt-2 text-lg text-muted">
           The King James Version uses older English, so try other forms of the word (for example "believeth" instead of
           "believes"), fewer words, or search the whole Bible.
@@ -213,7 +213,7 @@ function SearchResults({
       <ul className="divide-y divide-line">
         {hits.map((h) => (
           <li key={`${h.book}.${h.chapter}.${h.verse}`}>
-            <button type="button" onClick={() => onOpen(h)} className="w-full rounded-xl px-2 py-3 text-left hover:bg-accent-soft">
+            <button type="button" onClick={() => onOpen(h)} className="w-full rounded-2xl px-3 py-3 text-left hover:bg-accent-soft">
               <span className="block font-bold text-accent">{formatRef(h)}</span>
               <span className="scripture mt-1 block text-lg text-ink">
                 <Marked text={h.text} terms={terms} />

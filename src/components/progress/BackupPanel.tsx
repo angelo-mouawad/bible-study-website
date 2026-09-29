@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Icon } from '../ui/Icon';
-import { btn, heading } from '../ui/styles';
+import { btn } from '../ui/styles';
 import { useToast } from '../ui/Toast';
 import { useStore } from '../../store/AppStore';
 import { parseBackup } from '../../services/storage';
@@ -34,8 +34,8 @@ export function BackupPanel() {
   };
 
   return (
-    <section aria-labelledby="backup" className="mt-14 border-t border-line pt-8">
-      <h2 id="backup" className={heading.section}>
+    <section aria-labelledby="backup" className="glass rounded-[28px] p-5 sm:p-6">
+      <h2 id="backup" className="font-display text-lg font-semibold">
         Your data
       </h2>
       <p className="mt-2 text-lg text-muted">

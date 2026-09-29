@@ -11,6 +11,7 @@ The Bible text is the King James Version, which is in the public domain.
 - Search by word, phrase (in quotes), book, chapter or verse reference
 - Six reading plans that run side by side, each with its own progress
 - Overall Bible progress by book, chapter and verse
+- A dashboard home with a speedometer style progress gauge, reading streak and weekly activity
 - Adjustable text size and reading width, light, dark and high contrast themes
 - Backup and restore of all reading data
 - Keyboard and screen reader friendly, with large tap targets
@@ -173,4 +174,4 @@ Because data lives in one browser, the Progress page offers **Save a backup** an
 ## Credits
 
 - Bible text: King James Version (public domain), from [thiagobodruk/bible](https://github.com/thiagobodruk/bible)
-- Fonts: [Literata](https://fonts.google.com/specimen/Literata) for Scripture and [Atkinson Hyperlegible](https://fonts.google.com/specimen/Atkinson+Hyperlegible), designed for readers with low vision, for everything else
+- Fonts: [Literata](https://fonts.google.com/specimen/Literata) for Scripture, [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) for headings and numbers, [Manrope](https://fonts.google.com/specimen/Manrope) for everything else

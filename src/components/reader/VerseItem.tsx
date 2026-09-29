@@ -41,7 +41,7 @@ export const VerseItem = memo(function VerseItem({
         aria-pressed={selected}
         aria-label={`Verse ${verse}${state.length ? `, ${state.join(', ')}` : ''}. ${text}`}
         className={`group grid w-full grid-cols-[2.25rem_1fr] gap-x-2 rounded-xl px-1 py-2 text-left transition-colors sm:grid-cols-[2.75rem_1fr] ${
-          selected ? 'bg-accent-soft ring-2 ring-accent' : targeted ? 'ring-2 ring-flame' : 'hover:bg-accent-soft/60'
+          selected ? 'bg-accent-soft ring-2 ring-accent' : targeted ? 'bg-accent-soft/50 ring-2 ring-flame' : 'hover:bg-accent-soft/50'
         }`}
       >
         <span aria-hidden="true" className="pt-[0.35em] text-right font-sans text-[0.72em] font-bold leading-none text-muted">
@@ -66,7 +66,7 @@ export const VerseItem = memo(function VerseItem({
           <button
             type="button"
             onClick={() => onEditNote(verse)}
-            className="w-full rounded-xl border-l-4 border-accent bg-surface px-4 py-3 text-left font-sans text-[0.8em] leading-relaxed text-ink hover:bg-accent-soft"
+            className="w-full rounded-2xl border-l-4 border-accent bg-accent-soft/60 px-4 py-3 text-left font-sans text-[0.8em] leading-relaxed text-ink hover:bg-accent-soft"
             aria-label={`Your note on verse ${verse}: ${note.text}. Edit note`}
           >
             <span aria-hidden="true" className="mb-1 block text-[0.85em] font-bold text-accent">

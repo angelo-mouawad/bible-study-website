@@ -31,7 +31,7 @@ export class ErrorBoundary extends Component<Props, State> {
     if (!this.state.error) return this.props.children;
     return (
       <div role="alert" className="mx-auto max-w-xl py-16 text-center">
-        <h2 className="font-serif text-2xl font-semibold text-ink">This section could not be shown</h2>
+        <h2 className="font-display text-2xl font-semibold text-ink">This section could not be shown</h2>
         <p className="mt-3 text-lg text-muted">
           Your highlights, notes and progress are safe. Try again, or go back to the home page.
         </p>

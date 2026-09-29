@@ -26,7 +26,7 @@ export function PlanDayPanel({ planId, day, current, nav }: Props) {
   const nextReading = index >= 0 ? planDay.readings[index + 1] : undefined;
 
   return (
-    <aside aria-label={`${plan.name}, day ${day}`} className="mt-10 rounded-2xl border-2 border-accent-soft bg-surface p-5">
+    <aside aria-label={`${plan.name}, day ${day}`} className="mt-10 rounded-[24px] bg-accent-soft/70 p-5 sm:p-6">
       <p className="text-base font-bold text-accent">
         {plan.name}, day {day} of {plan.days.length}
       </p>
