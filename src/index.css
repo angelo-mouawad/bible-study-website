@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+/*
+  Design tokens. Components only use these names (bg-paper, text-ink, border-line...),
+  so each theme is just a different set of values below.
+  Palette idea: olive wood and lamp oil ("Thy word is a lamp unto my feet", Psalm 119:105).
+*/
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-flame: var(--flame);
+  --font-serif: "Literata", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-sans: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  --paper: #f3f4ee;
+  --surface: #fbfbf8;
+  --ink: #1c211d;
+  --muted: #545b53;
+  --line: #d6d9ce;
+  --accent: #3e5c2b;
+  --accent-strong: #2f4720;
+  --accent-ink: #ffffff;
+  --accent-soft: #e3e9d6;
+  --flame: #b7791f;
+  --hl-yellow: #f8e98f;
+  --hl-green: #c6e6b5;
+  --hl-blue: #c3dcf3;
+  --hl-purple: #e0cff2;
+  --hl-red: #f4c9c3;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #121513;
+  --surface: #1a1e1b;
+  --ink: #e7e5dc;
+  --muted: #a3a99d;
+  --line: #313731;
+  --accent: #a9c587;
+  --accent-strong: #bfd6a1;
+  --accent-ink: #142010;
+  --accent-soft: #252f20;
+  --flame: #e0a64a;
+  --hl-yellow: #5b4f14;
+  --hl-green: #264a2b;
+  --hl-blue: #203d5c;
+  --hl-purple: #422f5a;
+  --hl-red: #5c2a25;
+}
+
+[data-theme="contrast"] {
+  color-scheme: light;
+  --paper: #ffffff;
+  --surface: #ffffff;
+  --ink: #000000;
+  --muted: #1f1f1f;
+  --line: #000000;
+  --accent: #00338a;
+  --accent-strong: #001f57;
+  --accent-ink: #ffffff;
+  --accent-soft: #e2ebfb;
+  --flame: #7a4300;
+  --hl-yellow: #ffe94d;
+  --hl-green: #8fe07a;
+  --hl-blue: #8cc4ff;
+  --hl-purple: #d4a8ff;
+  --hl-red: #ff9c91;
+}
+
+html {
+  background: var(--paper);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+@layer components {
+/* Scripture text. Serif body text gets a little more leading, per classic book typography. */
+.scripture {
+  font-family: var(--font-serif);
+  line-height: 1.8;
+  font-optical-sizing: auto;
+  hanging-punctuation: first;
+}
+
+.hl-yellow { background-color: var(--hl-yellow); }
+.hl-green { background-color: var(--hl-green); }
+.hl-blue { background-color: var(--hl-blue); }
+.hl-purple { background-color: var(--hl-purple); }
+.hl-red { background-color: var(--hl-red); }
+}
+
+/* In high contrast mode highlighted verses are also underlined, so colour is not the only signal. */
+[data-theme="contrast"] [data-highlighted] .verse-text {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Native dialog styling. On phones dialogs sit at the bottom of the screen. */
+.modal {
+  margin: auto auto 0;
+  width: 100%;
+  max-width: 100%;
+  max-height: 88dvh;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 20px 20px 0 0;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 -12px 40px rgb(0 0 0 / 0.18);
+}
+.modal::backdrop {
+  background: rgb(10 14 11 / 0.5);
+}
+@media (min-width: 640px) {
+  .modal {
+    margin: auto;
+    width: min(34rem, calc(100% - 2rem));
+    max-height: 85dvh;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgb(0 0 0 / 0.25);
+  }
+  .modal-large {
+    width: min(48rem, calc(100% - 2rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  header, nav, .no-print { display: none !important; }
+}

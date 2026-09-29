@@ -1,0 +1,319 @@
+{
+  "id": "getting-to-know-jesus",
+  "name": "Getting to Know Jesus",
+  "order": 2,
+  "difficulty": "Beginner",
+  "dailyTime": "About 5 to 10 minutes a day",
+  "description": "Read the whole Gospel of Mark, the shortest account of Jesus' life, then twelve key chapters from John that show who Jesus said he was.",
+  "durationDays": 28,
+  "days": [
+    {
+      "day": 1,
+      "title": "The beginning",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 1
+        }
+      ],
+      "explanation": "Jesus is baptized, tested in the wilderness, calls his first disciples, and starts healing people."
+    },
+    {
+      "day": 2,
+      "title": "Through the roof",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 2
+        }
+      ],
+      "explanation": "Friends lower a paralyzed man through a roof to reach Jesus, and Jesus forgives his sins before healing him."
+    },
+    {
+      "day": 3,
+      "title": "The twelve",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 3
+        }
+      ],
+      "explanation": "Jesus chooses twelve apostles, faces growing opposition, and even his own family struggles to understand him."
+    },
+    {
+      "day": 4,
+      "title": "Parables and a storm",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 4
+        }
+      ],
+      "explanation": "The parable of the sower and other stories about God's kingdom, then Jesus calms a storm."
+    },
+    {
+      "day": 5,
+      "title": "Three rescues",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 5
+        }
+      ],
+      "explanation": "A man freed from a legion of demons, a woman healed by touching Jesus' cloak, and Jairus's daughter raised."
+    },
+    {
+      "day": 6,
+      "title": "Rejection and bread",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 6
+        }
+      ],
+      "explanation": "Jesus is rejected in his hometown, sends out the twelve, feeds five thousand people, and walks on water."
+    },
+    {
+      "day": 7,
+      "title": "What makes us unclean",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 7
+        }
+      ],
+      "explanation": "Jesus teaches that what comes out of the heart matters more than outward rules, and he helps a foreign woman who will not give up."
+    },
+    {
+      "day": 8,
+      "title": "Who do you say I am?",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 8
+        }
+      ],
+      "explanation": "Peter declares that Jesus is the Christ, and Jesus begins to explain that he must suffer and die."
+    },
+    {
+      "day": 9,
+      "title": "On the mountain",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 9
+        }
+      ],
+      "explanation": "Three disciples see Jesus transfigured in glory. Back down the mountain, a father prays, \"help thou mine unbelief.\""
+    },
+    {
+      "day": 10,
+      "title": "To serve",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 10
+        }
+      ],
+      "explanation": "Jesus blesses children, challenges a rich man, and says he came not to be served but to serve."
+    },
+    {
+      "day": 11,
+      "title": "Into Jerusalem",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 11
+        }
+      ],
+      "explanation": "Jesus rides into Jerusalem to shouts of \"Hosanna\" and clears the temple."
+    },
+    {
+      "day": 12,
+      "title": "Hard questions",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 12
+        }
+      ],
+      "explanation": "Leaders try to trap Jesus with questions. He names the greatest commandment and praises a poor widow's gift."
+    },
+    {
+      "day": 13,
+      "title": "Stay awake",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 13
+        }
+      ],
+      "explanation": "Jesus speaks about the destruction of the temple and the end of the age, and tells his followers to watch."
+    },
+    {
+      "day": 14,
+      "title": "The last night",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 14
+        }
+      ],
+      "explanation": "The Last Supper, prayer in Gethsemane, the arrest, the trial, and Peter's denial."
+    },
+    {
+      "day": 15,
+      "title": "Crucified",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 15
+        }
+      ],
+      "explanation": "Jesus is handed over to Pilate, mocked, crucified, and buried."
+    },
+    {
+      "day": 16,
+      "title": "He is risen",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 16
+        }
+      ],
+      "explanation": "The women find the tomb empty and hear that Jesus has risen."
+    },
+    {
+      "day": 17,
+      "title": "The Word made flesh",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 1
+        }
+      ],
+      "explanation": "John steps back to eternity: the Word who created all things became a human being and lived among us."
+    },
+    {
+      "day": 18,
+      "title": "God so loved the world",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 3
+        }
+      ],
+      "explanation": "Jesus' conversation with Nicodemus about new birth, and the heart of the good news in verse 16."
+    },
+    {
+      "day": 19,
+      "title": "The woman at the well",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 4
+        }
+      ],
+      "explanation": "Jesus crosses social lines to offer living water to a Samaritan woman, and her whole town comes to see him."
+    },
+    {
+      "day": 20,
+      "title": "Bread of life",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 6
+        }
+      ],
+      "explanation": "The feeding of the five thousand and Jesus' teaching that he himself is the bread that gives life."
+    },
+    {
+      "day": 21,
+      "title": "The good shepherd",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 10
+        }
+      ],
+      "explanation": "Jesus calls himself the door and the good shepherd who gives his life for the sheep."
+    },
+    {
+      "day": 22,
+      "title": "The resurrection and the life",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 11
+        }
+      ],
+      "explanation": "The raising of Lazarus. Jesus weeps with his friends before showing his power over death."
+    },
+    {
+      "day": 23,
+      "title": "The way",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 14
+        }
+      ],
+      "explanation": "On his last night Jesus comforts his disciples: \"I am the way, the truth, and the life,\" and promises the Holy Spirit."
+    },
+    {
+      "day": 24,
+      "title": "The vine",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 15
+        }
+      ],
+      "explanation": "Jesus describes himself as the vine and his followers as branches, and calls them friends."
+    },
+    {
+      "day": 25,
+      "title": "Jesus prays for us",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 17
+        }
+      ],
+      "explanation": "Jesus prays for his disciples and for everyone who will believe through them."
+    },
+    {
+      "day": 26,
+      "title": "It is finished",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 19
+        }
+      ],
+      "explanation": "John's account of the crucifixion, including Jesus caring for his mother from the cross."
+    },
+    {
+      "day": 27,
+      "title": "Risen",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 20
+        }
+      ],
+      "explanation": "Mary Magdalene meets the risen Jesus, and doubting Thomas is invited to see for himself."
+    },
+    {
+      "day": 28,
+      "title": "Breakfast by the sea",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 21
+        }
+      ],
+      "explanation": "Jesus cooks breakfast for his disciples and gently restores Peter, who had denied him."
+    }
+  ]
+}

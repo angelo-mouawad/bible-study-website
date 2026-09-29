@@ -1,0 +1,341 @@
+{
+  "id": "beginner",
+  "name": "Beginner Journey",
+  "order": 1,
+  "difficulty": "Beginner",
+  "dailyTime": "About 5 minutes a day",
+  "description": "A gentle first month with the Bible. You start with the life of Jesus, then step back to see where the story begins and how the first Christians carried it on. One chapter a day, with a short note on why it matters.",
+  "durationDays": 30,
+  "days": [
+    {
+      "day": 1,
+      "title": "Meet Jesus",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 1
+        }
+      ],
+      "explanation": "John opens by describing Jesus as the Word who was with God from the beginning. You also meet John the Baptist and the first disciples."
+    },
+    {
+      "day": 2,
+      "title": "The first sign",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 2
+        }
+      ],
+      "explanation": "Jesus turns water into wine at a wedding in Cana, the first of the signs John records, and then clears the traders out of the temple."
+    },
+    {
+      "day": 3,
+      "title": "Born again",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 3
+        }
+      ],
+      "explanation": "A religious leader named Nicodemus visits Jesus at night. This chapter contains John 3:16, one of the best known verses in the Bible."
+    },
+    {
+      "day": 4,
+      "title": "Living water",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 4
+        }
+      ],
+      "explanation": "Jesus talks with a Samaritan woman at a well, someone most people of his time would have avoided, and offers her \"living water\"."
+    },
+    {
+      "day": 5,
+      "title": "The bread of life",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 6
+        }
+      ],
+      "explanation": "Jesus feeds a crowd of thousands and then explains what the miracle points to: he calls himself the bread of life."
+    },
+    {
+      "day": 6,
+      "title": "The good shepherd",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 10
+        }
+      ],
+      "explanation": "Jesus describes himself as a shepherd who knows his sheep by name and lays down his life for them."
+    },
+    {
+      "day": 7,
+      "title": "Lazarus",
+      "readings": [
+        {
+          "book": "JHN",
+          "chapter": 11
+        }
+      ],
+      "explanation": "Jesus weeps with grieving friends and raises Lazarus from the dead. He says, \"I am the resurrection, and the life.\""
+    },
+    {
+      "day": 8,
+      "title": "A psalm of trust",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 23
+        }
+      ],
+      "explanation": "After reading about the good shepherd, read the most loved psalm about God as a shepherd. Psalms are prayers and songs, and you can pray them too."
+    },
+    {
+      "day": 9,
+      "title": "A different gospel",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 1
+        }
+      ],
+      "explanation": "Mark tells the story of Jesus quickly and with lots of action. This first chapter covers his baptism, his first followers, and early healings."
+    },
+    {
+      "day": 10,
+      "title": "Stories and a storm",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 4
+        }
+      ],
+      "explanation": "Jesus teaches through parables, short stories with a deeper point, and then calms a storm on the lake while his disciples panic."
+    },
+    {
+      "day": 11,
+      "title": "Power and compassion",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 5
+        }
+      ],
+      "explanation": "Three encounters in one chapter: a troubled man set free, a sick woman healed, and a young girl raised to life."
+    },
+    {
+      "day": 12,
+      "title": "The first will be last",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 10
+        }
+      ],
+      "explanation": "Jesus welcomes children, talks with a rich man, and teaches that greatness means serving others. It ends with a blind man receiving his sight."
+    },
+    {
+      "day": 13,
+      "title": "The last night",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 14
+        }
+      ],
+      "explanation": "The Last Supper, Jesus praying in the garden of Gethsemane, his arrest, and Peter denying that he knows him."
+    },
+    {
+      "day": 14,
+      "title": "The cross",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 15
+        }
+      ],
+      "explanation": "Jesus is sentenced by Pilate and crucified. This is the center of the Christian story, so take your time with it."
+    },
+    {
+      "day": 15,
+      "title": "The empty tomb",
+      "readings": [
+        {
+          "book": "MRK",
+          "chapter": 16
+        }
+      ],
+      "explanation": "Women come to the tomb on Sunday morning and find it empty. Jesus has risen."
+    },
+    {
+      "day": 16,
+      "title": "In the beginning",
+      "readings": [
+        {
+          "book": "GEN",
+          "chapter": 1
+        }
+      ],
+      "explanation": "Now go back to the very start. Genesis 1 describes God creating the world and calling it good."
+    },
+    {
+      "day": 17,
+      "title": "The first people",
+      "readings": [
+        {
+          "book": "GEN",
+          "chapter": 2
+        }
+      ],
+      "explanation": "A closer look at the creation of the first man and woman, and the garden God made for them."
+    },
+    {
+      "day": 18,
+      "title": "Something goes wrong",
+      "readings": [
+        {
+          "book": "GEN",
+          "chapter": 3
+        }
+      ],
+      "explanation": "The first people disobey God. This chapter explains why the world is broken, and it already hints at a rescue."
+    },
+    {
+      "day": 19,
+      "title": "A promise to Abraham",
+      "readings": [
+        {
+          "book": "GEN",
+          "chapter": 12
+        }
+      ],
+      "explanation": "God calls Abram to leave his home and promises that through his family all the nations of the earth will be blessed."
+    },
+    {
+      "day": 20,
+      "title": "The burning bush",
+      "readings": [
+        {
+          "book": "EXO",
+          "chapter": 3
+        }
+      ],
+      "explanation": "Generations later, Abraham's descendants are slaves in Egypt. God speaks to Moses from a burning bush and tells him his name."
+    },
+    {
+      "day": 21,
+      "title": "The Ten Commandments",
+      "readings": [
+        {
+          "book": "EXO",
+          "chapter": 20
+        }
+      ],
+      "explanation": "After rescuing his people from Egypt, God gives them the Ten Commandments, a picture of how to love God and each other."
+    },
+    {
+      "day": 22,
+      "title": "Coming back to God",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 51
+        }
+      ],
+      "explanation": "A prayer of David after a serious failure. It shows how to be honest with God about what you have done wrong."
+    },
+    {
+      "day": 23,
+      "title": "Fully known",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 139
+        }
+      ],
+      "explanation": "A psalm about how God knows us completely and is present everywhere, even in the darkest places."
+    },
+    {
+      "day": 24,
+      "title": "The Sermon on the Mount",
+      "readings": [
+        {
+          "book": "MAT",
+          "chapter": 5
+        }
+      ],
+      "explanation": "The beginning of Jesus' most famous teaching, including the Beatitudes: \"Blessed are the poor in spirit...\""
+    },
+    {
+      "day": 25,
+      "title": "How to pray",
+      "readings": [
+        {
+          "book": "MAT",
+          "chapter": 6
+        }
+      ],
+      "explanation": "Jesus teaches the Lord's Prayer and talks about money, worry, and trusting God with tomorrow."
+    },
+    {
+      "day": 26,
+      "title": "Lost and found",
+      "readings": [
+        {
+          "book": "LUK",
+          "chapter": 15
+        }
+      ],
+      "explanation": "Three stories about something lost and then found, ending with the parable of the prodigal son and his forgiving father."
+    },
+    {
+      "day": 27,
+      "title": "The church begins",
+      "readings": [
+        {
+          "book": "ACT",
+          "chapter": 2
+        }
+      ],
+      "explanation": "After Jesus returns to heaven, the Holy Spirit comes on his followers. Peter preaches and thousands believe."
+    },
+    {
+      "day": 28,
+      "title": "An enemy changed",
+      "readings": [
+        {
+          "book": "ACT",
+          "chapter": 9
+        }
+      ],
+      "explanation": "Saul, who was hunting down Christians, meets the risen Jesus on the road to Damascus. He becomes the apostle Paul."
+    },
+    {
+      "day": 29,
+      "title": "Nothing can separate us",
+      "readings": [
+        {
+          "book": "ROM",
+          "chapter": 8
+        }
+      ],
+      "explanation": "Paul explains that there is no condemnation for those in Christ, and that nothing can separate us from the love of God."
+    },
+    {
+      "day": 30,
+      "title": "The way of love",
+      "readings": [
+        {
+          "book": "1CO",
+          "chapter": 13
+        }
+      ],
+      "explanation": "The famous chapter about love: patient, kind, and never failing. A good place to finish your first month."
+    }
+  ]
+}

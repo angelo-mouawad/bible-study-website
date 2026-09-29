@@ -1,0 +1,341 @@
+{
+  "id": "bible-foundations",
+  "name": "Bible Foundations",
+  "order": 3,
+  "difficulty": "Intermediate",
+  "dailyTime": "About 10 minutes a day",
+  "description": "The big story of the Bible in 30 chapters, from creation to the new creation. Ideal if you have read some parts but want to see how they fit together.",
+  "durationDays": 30,
+  "days": [
+    {
+      "day": 1,
+      "title": "Creation",
+      "readings": [
+        {
+          "book": "GEN",
+          "chapter": 1
+        }
+      ],
+      "explanation": "The Bible opens with God making an ordered, good world and giving people a special place in it."
+    },
+    {
+      "day": 2,
+      "title": "The fall",
+      "readings": [
+        {
+          "book": "GEN",
+          "chapter": 3
+        }
+      ],
+      "explanation": "Humanity turns away from God, and sin, pain and death enter the story."
+    },
+    {
+      "day": 3,
+      "title": "The flood",
+      "readings": [
+        {
+          "book": "GEN",
+          "chapter": 6
+        }
+      ],
+      "explanation": "The world has become violent. God sends a flood but saves Noah and his family, a pattern of judgment and rescue."
+    },
+    {
+      "day": 4,
+      "title": "The promise",
+      "readings": [
+        {
+          "book": "GEN",
+          "chapter": 12
+        }
+      ],
+      "explanation": "God calls Abraham and promises to bless all nations through his family. The rest of the Bible follows this promise."
+    },
+    {
+      "day": 5,
+      "title": "Abraham is tested",
+      "readings": [
+        {
+          "book": "GEN",
+          "chapter": 22
+        }
+      ],
+      "explanation": "Abraham is asked to offer his son Isaac, and God provides a ram instead. Many readers see a foreshadowing of the cross."
+    },
+    {
+      "day": 6,
+      "title": "Joseph sold",
+      "readings": [
+        {
+          "book": "GEN",
+          "chapter": 37
+        }
+      ],
+      "explanation": "Joseph's brothers sell him into slavery out of jealousy, which will bring the family to Egypt."
+    },
+    {
+      "day": 7,
+      "title": "Meant for good",
+      "readings": [
+        {
+          "book": "GEN",
+          "chapter": 50
+        }
+      ],
+      "explanation": "Joseph forgives his brothers: \"ye thought evil against me; but God meant it unto good.\""
+    },
+    {
+      "day": 8,
+      "title": "Moses called",
+      "readings": [
+        {
+          "book": "EXO",
+          "chapter": 3
+        }
+      ],
+      "explanation": "The Israelites are slaves in Egypt. God reveals himself to Moses at the burning bush."
+    },
+    {
+      "day": 9,
+      "title": "The Passover",
+      "readings": [
+        {
+          "book": "EXO",
+          "chapter": 12
+        }
+      ],
+      "explanation": "The blood of a lamb protects Israel on the night of the final plague. Jesus later celebrates this meal with his disciples."
+    },
+    {
+      "day": 10,
+      "title": "Through the sea",
+      "readings": [
+        {
+          "book": "EXO",
+          "chapter": 14
+        }
+      ],
+      "explanation": "God parts the Red Sea and brings his people out of slavery, the great rescue of the Old Testament."
+    },
+    {
+      "day": 11,
+      "title": "The covenant",
+      "readings": [
+        {
+          "book": "EXO",
+          "chapter": 20
+        }
+      ],
+      "explanation": "At Mount Sinai God gives the Ten Commandments to the people he has rescued."
+    },
+    {
+      "day": 12,
+      "title": "Love the Lord",
+      "readings": [
+        {
+          "book": "DEU",
+          "chapter": 6
+        }
+      ],
+      "explanation": "Moses calls Israel to love God with all their heart, soul and might, and to teach this to their children."
+    },
+    {
+      "day": 13,
+      "title": "Into the land",
+      "readings": [
+        {
+          "book": "JOS",
+          "chapter": 1
+        }
+      ],
+      "explanation": "Joshua takes over from Moses and is told to be strong and courageous as Israel enters the promised land."
+    },
+    {
+      "day": 14,
+      "title": "The cycle",
+      "readings": [
+        {
+          "book": "JDG",
+          "chapter": 2
+        }
+      ],
+      "explanation": "Israel keeps forgetting God, suffering, crying out, and being rescued. This pattern shapes the book of Judges."
+    },
+    {
+      "day": 15,
+      "title": "Loyal love",
+      "readings": [
+        {
+          "book": "RUT",
+          "chapter": 1
+        }
+      ],
+      "explanation": "A foreign widow named Ruth refuses to leave her mother-in-law. She will become an ancestor of King David."
+    },
+    {
+      "day": 16,
+      "title": "David anointed",
+      "readings": [
+        {
+          "book": "1SA",
+          "chapter": 16
+        }
+      ],
+      "explanation": "God chooses the youngest shepherd boy as king, because the Lord looks on the heart."
+    },
+    {
+      "day": 17,
+      "title": "David and Goliath",
+      "readings": [
+        {
+          "book": "1SA",
+          "chapter": 17
+        }
+      ],
+      "explanation": "David faces the giant, trusting that the battle belongs to the Lord."
+    },
+    {
+      "day": 18,
+      "title": "A forever king",
+      "readings": [
+        {
+          "book": "2SA",
+          "chapter": 7
+        }
+      ],
+      "explanation": "God promises David that his kingdom will last forever. The New Testament sees this fulfilled in Jesus."
+    },
+    {
+      "day": 19,
+      "title": "Elijah on Mount Carmel",
+      "readings": [
+        {
+          "book": "1KI",
+          "chapter": 18
+        }
+      ],
+      "explanation": "The prophet Elijah challenges the prophets of Baal to show the people who the true God is."
+    },
+    {
+      "day": 20,
+      "title": "The suffering servant",
+      "readings": [
+        {
+          "book": "ISA",
+          "chapter": 53
+        }
+      ],
+      "explanation": "Isaiah describes a servant who suffers for the sins of others. Christians read this as a prophecy of Jesus."
+    },
+    {
+      "day": 21,
+      "title": "A new covenant",
+      "readings": [
+        {
+          "book": "JER",
+          "chapter": 31
+        }
+      ],
+      "explanation": "God promises a new covenant, with his law written on people's hearts."
+    },
+    {
+      "day": 22,
+      "title": "Exile",
+      "readings": [
+        {
+          "book": "2KI",
+          "chapter": 25
+        }
+      ],
+      "explanation": "Jerusalem falls to Babylon and the people are taken into exile, the low point of Israel's history."
+    },
+    {
+      "day": 23,
+      "title": "Faithful in exile",
+      "readings": [
+        {
+          "book": "DAN",
+          "chapter": 6
+        }
+      ],
+      "explanation": "Daniel keeps praying to God in a foreign land and is protected in the lions' den."
+    },
+    {
+      "day": 24,
+      "title": "Coming home",
+      "readings": [
+        {
+          "book": "NEH",
+          "chapter": 8
+        }
+      ],
+      "explanation": "Back in Jerusalem, the people gather to hear God's law read aloud, and they weep and celebrate."
+    },
+    {
+      "day": 25,
+      "title": "A savior is born",
+      "readings": [
+        {
+          "book": "LUK",
+          "chapter": 2
+        }
+      ],
+      "explanation": "After centuries of waiting, Jesus is born in Bethlehem and the angels announce good news to shepherds."
+    },
+    {
+      "day": 26,
+      "title": "The risen Lord",
+      "readings": [
+        {
+          "book": "LUK",
+          "chapter": 24
+        }
+      ],
+      "explanation": "Jesus rises and explains to two travelers how all the Scriptures pointed to him."
+    },
+    {
+      "day": 27,
+      "title": "To the ends of the earth",
+      "readings": [
+        {
+          "book": "ACT",
+          "chapter": 1
+        }
+      ],
+      "explanation": "Jesus sends his followers to be his witnesses everywhere and ascends to heaven."
+    },
+    {
+      "day": 28,
+      "title": "The Spirit comes",
+      "readings": [
+        {
+          "book": "ACT",
+          "chapter": 2
+        }
+      ],
+      "explanation": "The Holy Spirit is poured out at Pentecost and the church is born."
+    },
+    {
+      "day": 29,
+      "title": "Peace with God",
+      "readings": [
+        {
+          "book": "ROM",
+          "chapter": 5
+        }
+      ],
+      "explanation": "Paul explains how Christ's death brings peace with God, reversing what went wrong through Adam."
+    },
+    {
+      "day": 30,
+      "title": "All things new",
+      "readings": [
+        {
+          "book": "REV",
+          "chapter": 21
+        }
+      ],
+      "explanation": "The Bible ends with a new heaven and a new earth, where God lives with his people and there is no more death."
+    }
+  ]
+}

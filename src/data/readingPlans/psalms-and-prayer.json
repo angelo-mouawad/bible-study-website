@@ -1,0 +1,242 @@
+{
+  "id": "psalms-and-prayer",
+  "name": "Psalms & Prayer",
+  "order": 4,
+  "difficulty": "Beginner",
+  "dailyTime": "About 5 minutes a day",
+  "description": "Three weeks of praying with the Psalms, plus two New Testament chapters on prayer. Read slowly, and try praying a line or two in your own words.",
+  "durationDays": 21,
+  "days": [
+    {
+      "day": 1,
+      "title": "Two paths",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 1
+        }
+      ],
+      "explanation": "The Psalms open by contrasting a life rooted in God, like a tree by water, with a life that blows away."
+    },
+    {
+      "day": 2,
+      "title": "How majestic",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 8
+        }
+      ],
+      "explanation": "Looking at the night sky, the psalmist wonders why God cares so much about people."
+    },
+    {
+      "day": 3,
+      "title": "The heavens declare",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 19
+        }
+      ],
+      "explanation": "God speaks through creation and through his word. The psalm ends with a prayer many people still use."
+    },
+    {
+      "day": 4,
+      "title": "The Lord is my shepherd",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 23
+        }
+      ],
+      "explanation": "A psalm of trust for every season of life, including the darkest valleys."
+    },
+    {
+      "day": 5,
+      "title": "Whom shall I fear?",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 27
+        }
+      ],
+      "explanation": "A prayer for times of fear, asking to see God's goodness and learning to wait for him."
+    },
+    {
+      "day": 6,
+      "title": "The joy of forgiveness",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 32
+        }
+      ],
+      "explanation": "David describes the weight of hidden sin and the relief of confessing it to God."
+    },
+    {
+      "day": 7,
+      "title": "Taste and see",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 34
+        }
+      ],
+      "explanation": "A song of thanks from someone God rescued, with a promise that he is near the brokenhearted."
+    },
+    {
+      "day": 8,
+      "title": "Thirsty for God",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 42
+        }
+      ],
+      "explanation": "A prayer for times of discouragement: \"Why art thou cast down, O my soul?\""
+    },
+    {
+      "day": 9,
+      "title": "Be still",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 46
+        }
+      ],
+      "explanation": "God is our refuge even when everything around us shakes."
+    },
+    {
+      "day": 10,
+      "title": "A clean heart",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 51
+        }
+      ],
+      "explanation": "David's prayer of repentance. A model for being honest with God about failure."
+    },
+    {
+      "day": 11,
+      "title": "Wait in silence",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 62
+        }
+      ],
+      "explanation": "A quiet psalm about resting in God alone when others are unreliable."
+    },
+    {
+      "day": 12,
+      "title": "In a dry land",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 63
+        }
+      ],
+      "explanation": "Written in the wilderness, a prayer of longing for God that ends in joy."
+    },
+    {
+      "day": 13,
+      "title": "Teach us to number our days",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 90
+        }
+      ],
+      "explanation": "A prayer of Moses about the shortness of life and the everlasting God."
+    },
+    {
+      "day": 14,
+      "title": "Under his wings",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 91
+        }
+      ],
+      "explanation": "A psalm of protection for anyone who feels unsafe."
+    },
+    {
+      "day": 15,
+      "title": "Bless the Lord",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 103
+        }
+      ],
+      "explanation": "David reminds himself of everything God has done: forgiving, healing, redeeming, and showing compassion."
+    },
+    {
+      "day": 16,
+      "title": "Where help comes from",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 121
+        }
+      ],
+      "explanation": "A song pilgrims sang on the way to Jerusalem: my help comes from the Lord, who made heaven and earth."
+    },
+    {
+      "day": 17,
+      "title": "Search me",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 139
+        }
+      ],
+      "explanation": "God knows us completely and is always with us. It ends with an invitation for God to search our hearts."
+    },
+    {
+      "day": 18,
+      "title": "Great is the Lord",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 145
+        }
+      ],
+      "explanation": "A psalm of praise for God's greatness, kindness, and nearness to all who call on him."
+    },
+    {
+      "day": 19,
+      "title": "The Lord's Prayer",
+      "readings": [
+        {
+          "book": "MAT",
+          "chapter": 6
+        }
+      ],
+      "explanation": "Jesus teaches his followers how to pray, simply and without showing off."
+    },
+    {
+      "day": 20,
+      "title": "Instead of worrying",
+      "readings": [
+        {
+          "book": "PHP",
+          "chapter": 4
+        }
+      ],
+      "explanation": "Paul encourages bringing everything to God in prayer, with the promise of his peace."
+    },
+    {
+      "day": 21,
+      "title": "Let everything praise",
+      "readings": [
+        {
+          "book": "PSA",
+          "chapter": 150
+        }
+      ],
+      "explanation": "The Book of Psalms ends with pure praise. Finish these three weeks the same way."
+    }
+  ]
+}

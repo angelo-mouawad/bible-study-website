@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Lamp is a free, simple Bible reading companion with reading plans, highlights, notes and progress tracking. No account needed." />
+    <meta name="theme-color" content="#f3f4ee" />
+    <title>Lamp, a Bible reading companion</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Apply the saved theme before React loads, so the page never flashes the wrong colours.
+      try {
+        var saved = JSON.parse(localStorage.getItem('bibleApp.v1') || 'null');
+        var theme = saved && saved.preferences && saved.preferences.theme;
+        if (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
+        if (theme) document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Lamp needs JavaScript to show the Bible text. Please enable it in your browser settings.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
