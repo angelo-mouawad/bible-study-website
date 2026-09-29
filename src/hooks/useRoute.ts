@@ -36,7 +36,6 @@ export function parseHash(hash: string): Route {
         book: parts[1]?.toUpperCase(),
         chapter: toInt(parts[2]),
         verse: toInt(parts[3]),
-        // Set when the chapter was opened from a reading plan, so the reader can offer to complete that day.
         planId: params.get('plan') ?? undefined,
         planDay: toInt(params.get('day') ?? undefined),
       };
@@ -70,10 +69,6 @@ export function routeToHash(route: Route): string {
   }
 }
 
-/**
- * The whole app is one page. The URL hash only records where you are, so the browser
- * back button, refreshes and shared links work on GitHub Pages without any server routes.
- */
 export function useRoute() {
   const [route, setRoute] = useState<Route>(() => parseHash(window.location.hash));
 

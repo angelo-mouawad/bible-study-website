@@ -11,7 +11,6 @@ import type { Nav } from '../../types/nav';
 const NEXT: Record<ChapterStatus, ChapterStatus> = { unread: 'in-progress', 'in-progress': 'completed', completed: 'unread' };
 const LABEL: Record<ChapterStatus, string> = { unread: 'unread', 'in-progress': 'in progress', completed: 'completed' };
 
-/** A book as a small tile that fills up as chapters are read. Opens the chapter grid. */
 export function BookTile({ book, nav }: { book: CanonBook; nav: Nav }) {
   const { data, actions } = useStore();
   const [open, setOpen] = useState(false);

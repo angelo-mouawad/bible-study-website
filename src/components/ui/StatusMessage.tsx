@@ -8,7 +8,6 @@ interface Props {
   tone?: 'info' | 'error';
 }
 
-/** Used for empty lists, loading problems and invalid references. Always offers a way forward. */
 export function StatusMessage({ title, children, action, tone = 'info' }: Props) {
   return (
     <div role={tone === 'error' ? 'alert' : undefined} className="mx-auto max-w-lg py-10 text-center">

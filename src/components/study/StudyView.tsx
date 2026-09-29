@@ -23,7 +23,6 @@ export function StudyView({ tab, nav }: { tab: StudyTab; nav: Nav }) {
     bookmarks: data.bookmarks.length,
   };
 
-  // Only offer books that actually have saved items, so the filter is never a long empty list.
   const booksWithItems = useMemo(() => {
     const ids = new Set<string>();
     Object.values(data.highlights).forEach((h) => ids.add(h.book));
@@ -32,7 +31,6 @@ export function StudyView({ tab, nav }: { tab: StudyTab; nav: Nav }) {
     return CANON.filter((b) => ids.has(b.id));
   }, [data.highlights, data.notes, data.bookmarks]);
 
-  // Arrow keys move between tabs, as screen reader users expect.
   const onTabKey = (e: KeyboardEvent) => {
     const i = TABS.findIndex((t) => t.id === tab);
     const dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;

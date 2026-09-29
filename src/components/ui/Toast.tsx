@@ -2,7 +2,6 @@ import { createContext, useCallback, useContext, useRef, useState, type ReactNod
 
 const ToastContext = createContext<(message: string) => void>(() => {});
 
-/** Short confirmations such as "Copied". Also announced to screen readers. */
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [message, setMessage] = useState('');
   const timer = useRef<number | undefined>(undefined);

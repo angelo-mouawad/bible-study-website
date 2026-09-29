@@ -9,7 +9,6 @@ export interface PlanDay {
   explanation?: string;
 }
 
-/** Shape of every file in src/data/readingPlans/. */
 export interface ReadingPlan {
   id: string;
   name: string;
@@ -17,7 +16,6 @@ export interface ReadingPlan {
   durationDays: number;
   difficulty: PlanDifficulty;
   dailyTime?: string;
-  /** Sort position in the plan list. */
   order?: number;
   days: PlanDay[];
 }

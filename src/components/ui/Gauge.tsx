@@ -1,20 +1,17 @@
 import { useEffect, useId, useState } from 'react';
 
 interface Props {
-  /** 0 to 1 */
   value: number;
-  /** Big text in the middle, for example "18%". */
   display: string;
   label: string;
-  /** Text for screen readers, for example "18 percent of the Bible read". */
   description: string;
 }
 
 const CX = 160;
 const CY = 160;
 const R = 128;
-const START = 150; // degrees, lower left
-const SWEEP = 240; // through the top to the lower right
+const START = 150;
+const SWEEP = 240;
 
 const polar = (angle: number, r: number) => {
   const rad = (angle * Math.PI) / 180;
@@ -28,7 +25,6 @@ function arc(r: number, from: number, to: number) {
   return `M ${a.x} ${a.y} A ${r} ${r} 0 ${large} 1 ${b.x} ${b.y}`;
 }
 
-/** A speedometer style dial. The needle sweeps to its value once when it appears. */
 export function Gauge({ value, display, label, description }: Props) {
   const id = useId().replace(/:/g, '');
   const clamped = Math.max(0, Math.min(1, value));
@@ -39,7 +35,6 @@ export function Gauge({ value, display, label, description }: Props) {
     return () => window.clearTimeout(t);
   }, [clamped]);
 
-  // Keep a tiny sliver visible once anything is read, so progress never looks like zero.
   const visible = shown > 0 ? Math.max(shown, 0.012) : 0;
   const needle = START + SWEEP * visible;
   const ticks = Array.from({ length: 41 }, (_, i) => i);
@@ -58,9 +53,7 @@ export function Gauge({ value, display, label, description }: Props) {
           </filter>
         </defs>
 
-        {/* track */}
         <path d={arc(R, START, START + SWEEP)} fill="none" stroke="var(--line)" strokeWidth="16" strokeLinecap="round" />
-        {/* soft glow under the value */}
         <path
           d={arc(R, START, START + SWEEP)}
           fill="none"
@@ -84,7 +77,6 @@ export function Gauge({ value, display, label, description }: Props) {
           className="transition-[stroke-dasharray] duration-[1400ms] ease-out"
         />
 
-        {/* ticks */}
         {ticks.map((i) => {
           const major = i % 10 === 0;
           const angle = START + (SWEEP * i) / 40;
@@ -125,7 +117,6 @@ export function Gauge({ value, display, label, description }: Props) {
           );
         })}
 
-        {/* needle */}
         <g
           style={{ transform: `rotate(${needle}deg)`, transformOrigin: `${CX}px ${CY}px` }}
           className="transition-transform duration-[1400ms] ease-out"

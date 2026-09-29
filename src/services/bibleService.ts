@@ -1,8 +1,6 @@
 import { getTranslationInfo } from '../data/translations';
 import type { BibleTranslation, BookData, BookId } from '../types/bible';
 
-// Requests are cached as promises, so a book is only downloaded once per visit
-// even if several components ask for it at the same time.
 const indexCache = new Map<string, Promise<BibleTranslation>>();
 const bookCache = new Map<string, Promise<BookData>>();
 
@@ -19,7 +17,6 @@ async function fetchJson<T>(url: string): Promise<T> {
 function remember<T>(cache: Map<string, Promise<T>>, key: string, load: () => Promise<T>): Promise<T> {
   const existing = cache.get(key);
   if (existing) return existing;
-  // Failed requests are removed so the user can retry.
   const promise = load().catch((err: unknown) => {
     cache.delete(key);
     throw err;
@@ -48,7 +45,6 @@ export function loadBook(translationId: string, bookId: BookId): Promise<BookDat
   });
 }
 
-/** Loads every book of a translation (about 4 MB for the KJV). Used by word search. */
 export async function loadAllBooks(
   translationId: string,
   onProgress?: (loaded: number, total: number) => void,

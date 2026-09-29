@@ -119,7 +119,7 @@ export function SettingsDialog({ open, onClose }: { open: boolean; onClose: () =
             ))}
           </select>
           {TRANSLATIONS.length === 1 && (
-            <p className="mt-2 text-base text-muted">The King James Version is in the public domain. More translations can be added later.</p>
+            <p className="mt-2 text-base text-muted">More translations will be added later.</p>
           )}
         </div>
       </div>

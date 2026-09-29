@@ -1,7 +1,6 @@
 import type { BookData, BookId } from '../types/bible';
 import { bookName } from './references';
 
-/** "16-18" for a run of verses, "16, 18, 20" otherwise. */
 export function verseList(verses: number[]): string {
   const sorted = [...verses].sort((a, b) => a - b);
   const contiguous = sorted.every((v, i) => i === 0 || v === sorted[i - 1] + 1);
@@ -9,7 +8,6 @@ export function verseList(verses: number[]): string {
   return sorted.join(', ');
 }
 
-/** Text ready to paste into a message: the verses, then the reference and translation. */
 export function passageText(book: BookData, bookId: BookId, chapter: number, verses: number[], abbreviation: string): {
   reference: string;
   text: string;

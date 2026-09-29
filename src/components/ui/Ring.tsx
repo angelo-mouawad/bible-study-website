@@ -3,11 +3,9 @@ interface Props {
   max: number;
   size?: number;
   label: string;
-  /** Text inside the ring. Defaults to the percentage. */
   children?: React.ReactNode;
 }
 
-/** Circular progress, used for plans. */
 export function Ring({ value, max, size = 64, label, children }: Props) {
   const pct = max > 0 ? Math.min(1, value / max) : 0;
   const stroke = size > 80 ? 9 : 6;

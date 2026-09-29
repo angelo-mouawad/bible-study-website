@@ -2,7 +2,6 @@ import type { ChapterRef } from '../types/bible';
 import type { PlanDay, ReadingPlan } from '../types/plans';
 import { getCanonBook } from './canon';
 
-// Every JSON file in readingPlans/ becomes a plan. Adding a plan means adding a file.
 const modules = import.meta.glob<{ default: unknown }>('./readingPlans/*.json', { eager: true });
 
 function isChapterRef(value: unknown): value is ChapterRef {
@@ -12,7 +11,6 @@ function isChapterRef(value: unknown): value is ChapterRef {
   return !!book && typeof v.chapter === 'number' && v.chapter >= 1 && v.chapter <= book.chapters;
 }
 
-/** Checks a plan file and drops anything invalid instead of letting it crash the app. */
 function validatePlan(raw: unknown, file: string): ReadingPlan | null {
   if (!raw || typeof raw !== 'object') return null;
   const p = raw as Record<string, unknown>;

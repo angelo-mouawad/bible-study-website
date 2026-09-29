@@ -1,4 +1,5 @@
 import { Icon } from '../ui/Icon';
+import { LampLogo } from '../ui/LampLogo';
 import { NAV_ITEMS } from './navItems';
 import type { View } from '../../hooks/useRoute';
 
@@ -15,7 +16,7 @@ export function Header({ current, onNavigate, onSearch, onSettings, notice }: Pr
     <header className="sticky top-0 z-30 px-3 pt-3 sm:px-5">
       <div className="glass glass-strong mx-auto flex h-16 max-w-6xl items-center gap-2 rounded-full pl-3 pr-2">
         <a href="#/" className="flex items-center gap-2.5 rounded-full py-1 pl-1 pr-3" aria-label="Lamp, go to home">
-          <LampMark />
+          <LampLogo className="h-10 w-10" />
           <span className="font-display text-xl font-bold tracking-[-0.03em] text-ink">Lamp</span>
         </a>
 
@@ -71,19 +72,5 @@ export function Header({ current, onNavigate, onSearch, onSettings, notice }: Pr
         </p>
       )}
     </header>
-  );
-}
-
-export function LampMark({ className = 'h-9 w-9' }: { className?: string }) {
-  return (
-    <span
-      className={`flex items-center justify-center rounded-xl bg-gradient-to-br from-accent to-cocoa shadow-[inset_0_1px_0_rgb(255_255_255/0.3)] ${className}`}
-      aria-hidden="true"
-    >
-      <svg viewBox="0 0 32 32" className="h-[70%] w-[70%]">
-        <path d="M16 4c3.4 3.8 5 6.6 5 9.2a5 5 0 0 1-10 0C11 10.6 12.6 7.8 16 4z" fill="#f2d3a4" />
-        <path d="M5 19h22c0 4.4-4.9 7.5-11 7.5S5 23.4 5 19z" fill="#fff9f1" />
-      </svg>
-    </span>
   );
 }

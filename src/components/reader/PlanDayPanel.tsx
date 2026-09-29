@@ -14,7 +14,6 @@ interface Props {
   nav: Nav;
 }
 
-/** Shown under a chapter opened from a plan: the rest of that day's reading and a way to finish the day. */
 export function PlanDayPanel({ planId, day, current, nav }: Props) {
   const { data, actions } = useStore();
   const plan = getPlan(planId);

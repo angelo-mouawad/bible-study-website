@@ -60,7 +60,6 @@ function Shell() {
     },
   };
 
-  // Press "/" anywhere (outside a text field) to search.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement;

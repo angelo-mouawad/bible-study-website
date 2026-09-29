@@ -10,7 +10,6 @@ interface Props {
   plan: ReadingPlan;
   day: PlanDay;
   nav: Nav;
-  /** The featured card shows everything; list rows are compact until opened. */
   featured?: boolean;
 }
 

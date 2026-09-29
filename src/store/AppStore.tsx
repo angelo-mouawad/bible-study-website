@@ -18,7 +18,6 @@ export interface AppActions {
   removeBookmark: (id: string) => void;
   startPlan: (planId: string) => void;
   stopPlan: (planId: string) => void;
-  /** Marks a plan day done or not done. Completing a day also records its chapters as read. */
   setPlanDay: (planId: string, day: number, done: boolean, chapters: ChapterRef[]) => void;
   replaceAll: (data: AppData) => void;
   resetAll: () => void;
@@ -27,9 +26,7 @@ export interface AppActions {
 interface StoreValue {
   data: AppData;
   actions: AppActions;
-  /** True if saved data was damaged and had to be reset on this visit. */
   recovered: boolean;
-  /** False when the browser refuses to save (for example, storage is full or blocked). */
   canSave: boolean;
 }
 
@@ -42,7 +39,6 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
   const skipNextSave = useRef(true);
 
   useEffect(() => {
-    // Nothing changed on the very first render, so there is nothing to save yet.
     if (skipNextSave.current) {
       skipNextSave.current = false;
       return;
@@ -50,7 +46,6 @@ export function AppStoreProvider({ children }: { children: ReactNode }) {
     setCanSave(saveData(data));
   }, [data]);
 
-  // Keep several open tabs in sync.
   useEffect(() => {
     const onStorage = (e: StorageEvent) => {
       if (e.key !== STORAGE_KEY || !e.newValue) return;

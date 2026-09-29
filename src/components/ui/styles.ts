@@ -1,5 +1,3 @@
-// Shared class names so controls look and behave the same everywhere.
-// Every interactive control is at least 48px tall, which is comfortable for any finger.
 const base =
   'inline-flex items-center justify-center gap-2 min-h-12 rounded-full px-5 font-sans text-[1rem] font-bold leading-tight transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50';
 
@@ -16,7 +14,6 @@ export const heading = {
   section: 'font-display text-xl font-semibold tracking-[-0.01em] text-ink',
 };
 
-/** Small rounded label, used for durations, levels and counts. */
 export const chip =
   'inline-flex items-center gap-1.5 rounded-full border border-line bg-surface/70 px-3 py-1 text-sm font-semibold text-muted';
 

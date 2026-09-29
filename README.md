@@ -51,7 +51,9 @@ No path configuration is needed. `vite.config.ts` uses a relative base, and all 
 .github/workflows/deploy.yml   Build and publish to GitHub Pages
 public/
   bible/kjv/                   One JSON file per book, plus index.json
-  favicon.svg
+  apple-touch-icon.png         Home screen icon for iPhone and iPad
+  favicon.png                  Browser tab icon
+  logo.png                     Logo shown in the header
 scripts/
   build-bible.mjs              Converts a source Bible into the app's format
   generate-plans.mjs           Generates the two long reading plans

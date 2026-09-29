@@ -2,14 +2,12 @@ import type { ReactNode } from 'react';
 
 interface Props {
   title?: string;
-  /** Small control shown opposite the title, such as "See all". */
   action?: ReactNode;
   className?: string;
   children: ReactNode;
   id?: string;
 }
 
-/** Frosted tile used for every block of the dashboard and the other pages. */
 export function Panel({ title, action, className = '', children, id }: Props) {
   const headingId = id ? `${id}-title` : undefined;
   return (

@@ -6,7 +6,8 @@
     <meta name="description" content="Lamp is a free, simple Bible reading companion with reading plans, highlights, notes and progress tracking. No account needed." />
     <meta name="theme-color" content="#f6f1e9" />
     <title>Lamp, a Bible reading companion</title>
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,11 +15,9 @@
       rel="stylesheet"
     />
     <script>
-      // Apply the saved theme before React loads, so the page never flashes the wrong colours.
       try {
         var saved = JSON.parse(localStorage.getItem('bibleApp.v1') || 'null');
         var theme = saved && saved.preferences && saved.preferences.theme;
-        if (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
         if (theme) document.documentElement.setAttribute('data-theme', theme);
       } catch (e) {}
     </script>

@@ -5,7 +5,6 @@ export type AsyncState<T> =
   | { status: 'ready'; value: T }
   | { status: 'error'; error: string };
 
-/** Runs an async loader whenever `key` changes and ignores results that arrive too late. */
 export function useAsync<T>(key: string | null, load: () => Promise<T>): AsyncState<T> & { retry: () => void } {
   const [state, setState] = useState<AsyncState<T>>({ status: 'loading' });
   const [attempt, setAttempt] = useState(0);
@@ -22,7 +21,6 @@ export function useAsync<T>(key: string | null, load: () => Promise<T>): AsyncSt
     return () => {
       cancelled = true;
     };
-    // `load` is intentionally not a dependency: `key` describes what is being loaded.
   }, [key, attempt]);
 
   const retry = useCallback(() => setAttempt((a) => a + 1), []);

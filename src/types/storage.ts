@@ -7,7 +7,6 @@ export type ChapterStatus = 'unread' | 'in-progress' | 'completed';
 
 export interface Preferences {
   theme: Theme;
-  /** Reader font size in pixels. */
   fontSize: number;
   width: ReadingWidth;
   translation: string;
@@ -50,7 +49,6 @@ export interface Bookmark {
 export interface PlanProgress {
   planId: string;
   startedAt: number;
-  /** Day number to the time it was marked complete. Independent from every other plan. */
   completedDays: Record<string, number>;
 }
 
@@ -59,12 +57,6 @@ export interface ChapterProgress {
   updatedAt: number;
 }
 
-/**
- * Everything the app saves. Stored under the key "bibleApp.v1".
- * Chapter progress is keyed without a translation ("JHN.3") because reading John 3
- * counts as reading it whichever translation you used.
- * Highlights and notes are keyed with one ("kjv:JHN.3.16") because they belong to specific wording.
- */
 export interface AppData {
   version: 1;
   preferences: Preferences;

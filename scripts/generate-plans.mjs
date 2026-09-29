@@ -1,9 +1,3 @@
-// Generates the two long reading plans that would be tedious to write by hand.
-// The output is plain JSON in src/data/readingPlans/, exactly like the hand-written plans,
-// so the app treats every plan the same way.
-//
-// Usage: node scripts/generate-plans.mjs
-
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -15,7 +9,6 @@ const outDir = join(root, 'src/data/readingPlans');
 const chaptersOf = (books) =>
   books.flatMap((b) => Array.from({ length: b.chapters }, (_, i) => ({ book: b.id, chapter: i + 1 })));
 
-// Spreads a list of chapters as evenly as possible over a number of days.
 function spread(chapters, days) {
   return Array.from({ length: days }, (_, d) => {
     const start = Math.floor((d * chapters.length) / days);
@@ -24,7 +17,6 @@ function spread(chapters, days) {
   });
 }
 
-// Bible in a Year: Old Testament, New Testament and Psalms/Proverbs side by side each day.
 {
   const days = 365;
   const wisdom = new Set(['PSA', 'PRO']);
@@ -48,7 +40,6 @@ function spread(chapters, days) {
   writeFileSync(join(outDir, 'bible-in-a-year.json'), JSON.stringify(plan, null, 1) + '\n');
 }
 
-// Read the Bible in Order: Genesis to Revelation, four chapters a day.
 {
   const all = chaptersOf(canon);
   const perDay = 4;

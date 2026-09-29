@@ -39,7 +39,6 @@ export function ReaderView({ route, nav, onOpenSettings }: Props) {
   const { data } = useStore();
   const [pickerOpen, setPickerOpen] = useState(false);
 
-  // With no book in the address, reopen where the reader stopped last time.
   const fallback = data.lastLocation ?? { book: 'GEN', chapter: 1 };
   const bookId = route.book ?? fallback.book;
   const chapter = route.chapter ?? (route.book ? 1 : fallback.chapter);
@@ -317,7 +316,6 @@ function Chapter({ book, chapter, route, nav, translationId }: ChapterProps) {
         </footer>
       )}
 
-      {/* Leaves room so the action bar never covers the last verses. */}
       {selected.length > 0 && <div className="h-72" aria-hidden="true" />}
 
       {selected.length > 0 && passage && (

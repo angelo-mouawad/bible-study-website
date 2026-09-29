@@ -19,7 +19,6 @@ interface Props {
 
 const colorName = (c: HighlightColor) => c.charAt(0).toUpperCase() + c.slice(1);
 
-/** Appears at the bottom of the screen while verses are selected. */
 export function VerseActions(props: Props) {
   const { label, count, currentColor, hasNote, bookmarked } = props;
   return (

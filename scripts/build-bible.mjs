@@ -1,13 +1,3 @@
-// Converts a source Bible JSON into the per-book format the app loads.
-//
-// Usage:
-//   node scripts/build-bible.mjs [source.json] [translationId] [name] [abbreviation] [language]
-//
-// Defaults build the public-domain King James Version from scripts/source-kjv.json.
-// The source must be an array of 66 books in Protestant canonical order, each with
-// { "chapters": [[ "verse 1", "verse 2", ... ], ...] } (the thiagobodruk/bible format).
-// If your source uses a different shape, adapt readSource() below; the output stays the same.
-
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -29,7 +19,6 @@ function readSource(path) {
 }
 
 function clean(text) {
-  // Remove editorial markers some datasets use for italic words, and tidy spacing.
   return text
     .replace(/[{}]/g, '')
     .replace(/\s+/g, ' ')

@@ -3,7 +3,6 @@ import { btn } from './styles';
 
 interface Props {
   children: ReactNode;
-  /** Changing this value clears the error, for example when the user navigates elsewhere. */
   resetKey?: string;
 }
 
@@ -11,7 +10,6 @@ interface State {
   error: Error | null;
 }
 
-/** Stops a problem in one section from taking down the whole page. */
 export class ErrorBoundary extends Component<Props, State> {
   state: State = { error: null };
 

@@ -8,7 +8,6 @@ export async function copyText(text: string): Promise<boolean> {
     await navigator.clipboard.writeText(text);
     return true;
   } catch {
-    // Fallback for older browsers or pages without clipboard permission.
     try {
       const area = document.createElement('textarea');
       area.value = text;
@@ -26,7 +25,6 @@ export async function copyText(text: string): Promise<boolean> {
   }
 }
 
-/** Uses the phone's share sheet when there is one, otherwise copies. Returns what happened. */
 export async function shareText(title: string, text: string): Promise<'shared' | 'copied' | 'failed'> {
   if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
     try {

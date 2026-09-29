@@ -6,7 +6,6 @@ import type { BibleTranslation } from '../types/bible';
 
 const BibleContext = createContext<(AsyncState<BibleTranslation> & { retry: () => void }) | null>(null);
 
-/** Loads the index of the selected translation (book names and verse counts) once. */
 export function BibleProvider({ children }: { children: ReactNode }) {
   const translationId = useStore().data.preferences.translation;
   const state = useAsync(translationId, () => loadTranslation(translationId));
@@ -19,7 +18,6 @@ export function useTranslationIndex() {
   return ctx;
 }
 
-/** The loaded index, or null while it is loading or if it failed. */
 export function useTranslationOrNull(): BibleTranslation | null {
   const ctx = useTranslationIndex();
   return ctx.status === 'ready' ? ctx.value : null;

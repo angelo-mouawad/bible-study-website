@@ -11,7 +11,6 @@ import type {
 } from '../types/storage';
 
 export const STORAGE_KEY = 'bibleApp.v1';
-/** Keys from older versions go here, oldest first, so their data can be migrated. */
 const LEGACY_KEYS: string[] = [];
 
 export const HIGHLIGHT_COLORS: HighlightColor[] = ['yellow', 'green', 'blue', 'purple', 'red'];
@@ -27,7 +26,7 @@ export const DEFAULT_PREFERENCES: Preferences = {
 export function createEmptyData(): AppData {
   return {
     version: 1,
-    preferences: { ...DEFAULT_PREFERENCES, theme: prefersDark() ? 'dark' : 'light' },
+    preferences: { ...DEFAULT_PREFERENCES },
     lastLocation: null,
     chapters: {},
     highlights: {},
@@ -36,18 +35,6 @@ export function createEmptyData(): AppData {
     plans: {},
   };
 }
-
-function prefersDark(): boolean {
-  try {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  } catch {
-    return false;
-  }
-}
-
-// ---------- validation helpers ----------
-// Each helper accepts unknown input and returns a clean value or null.
-// Anything unrecognised is dropped one entry at a time, so one bad record never wipes the rest.
 
 type Obj = Record<string, unknown>;
 const isObj = (v: unknown): v is Obj => !!v && typeof v === 'object' && !Array.isArray(v);
@@ -165,17 +152,12 @@ export function sanitize(raw: unknown): AppData {
   };
 }
 
-/**
- * Upgrades data saved by an older version. There is only v1 today; when a v2 format arrives,
- * add a case here that converts v1 data, and bump STORAGE_KEY to "bibleApp.v2".
- */
 function migrate(raw: unknown): unknown {
   return raw;
 }
 
 export interface LoadResult {
   data: AppData;
-  /** True when saved data existed but could not be read, so the user can be told. */
   recovered: boolean;
 }
 
@@ -190,18 +172,15 @@ export function loadData(): LoadResult {
       }
     }
   } catch {
-    // Storage blocked (private mode in some browsers). The app still works for this visit.
     return { data: createEmptyData(), recovered: false };
   }
   if (text === null) return { data: createEmptyData(), recovered: false };
   try {
     return { data: sanitize(migrate(JSON.parse(text))), recovered: false };
   } catch {
-    // Keep a copy of the unreadable data instead of silently throwing it away.
     try {
       localStorage.setItem(`${STORAGE_KEY}.corrupt.${Date.now()}`, text);
     } catch {
-      /* ignore */
     }
     return { data: createEmptyData(), recovered: true };
   }
@@ -216,7 +195,6 @@ export function saveData(data: AppData): boolean {
   }
 }
 
-/** Parses a backup file exported from the Progress page. Throws if it is not usable. */
 export function parseBackup(text: string): AppData {
   const raw: unknown = JSON.parse(text);
   if (!isObj(raw) || raw.version !== 1) throw new Error('This file is not a Bible Companion backup.');

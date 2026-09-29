@@ -7,7 +7,6 @@ interface Needed {
   book: string;
 }
 
-/** Loads just the books needed to show verse text next to saved highlights, notes and bookmarks. */
 export function useVerseLookup(items: Needed[]) {
   const [books, setBooks] = useState<Record<string, BookData>>({});
   const keys = useMemo(() => [...new Set(items.map((i) => `${i.translation}:${i.book}`))].sort().join('|'), [items]);
@@ -19,7 +18,6 @@ export function useVerseLookup(items: Needed[]) {
       loadBook(translation, book)
         .then((data) => !cancelled && setBooks((b) => (b[key] ? b : { ...b, [key]: data })))
         .catch(() => {
-          /* The list still shows the reference without text. */
         });
     }
     return () => {

@@ -48,7 +48,6 @@ export function SearchDialog({ open, initialQuery, onClose, nav }: Props) {
   const reference = useMemo(() => parseReference(debounced), [debounced]);
   const wordQuery = useMemo(() => parseWordQuery(debounced), [debounced]);
 
-  // Load the whole Bible only when a word search is actually needed. Cached after the first time.
   useEffect(() => {
     if (!open || !wordQuery || loadingFor.current === translationId) return;
     loadingFor.current = translationId;

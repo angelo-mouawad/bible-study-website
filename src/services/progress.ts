@@ -33,7 +33,6 @@ export interface OverallProgress {
   booksCompleted: number;
   versesRead: number;
   totalVerses: number;
-  /** Share of all verses read. Falls back to chapters when verse counts are not loaded yet. */
   fraction: number;
 }
 
@@ -60,7 +59,6 @@ export function overallProgress(data: AppData, translation: BibleTranslation | n
   return { chaptersCompleted, totalChapters: TOTAL_CHAPTERS, booksCompleted, versesRead, totalVerses, fraction };
 }
 
-/** The next chapter in canonical order that has not been completed, starting after `from`. */
 export function nextUnreadChapter(data: AppData, from?: ChapterRef): ChapterRef | undefined {
   const all = CANON.flatMap((b) => Array.from({ length: b.chapters }, (_, i) => ({ book: b.id, chapter: i + 1 })));
   const start = from ? all.findIndex((r) => r.book === from.book && r.chapter === from.chapter) + 1 : 0;
@@ -71,12 +69,9 @@ export function nextUnreadChapter(data: AppData, from?: ChapterRef): ChapterRef 
   return undefined;
 }
 
-// ---------- reading plans ----------
-
 export interface PlanStatus {
   completedCount: number;
   total: number;
-  /** First day not yet completed, or undefined if the plan is finished. */
   nextDay?: PlanDay;
   finished: boolean;
 }
@@ -91,5 +86,4 @@ export function planStatus(plan: ReadingPlan, progress: PlanProgress | undefined
 export const isDayDone = (progress: PlanProgress | undefined, day: number) =>
   progress?.completedDays[day] !== undefined;
 
-/** True when every chapter of a plan day was already marked read, in any way. */
 export const dayAlreadyRead = (data: AppData, day: PlanDay) => day.readings.every((r) => isRead(data, r));

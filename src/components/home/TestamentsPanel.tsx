@@ -34,7 +34,6 @@ export function TestamentsPanel({ nav, className = '' }: { nav: Nav; className?:
                   {p.done} / {p.total}
                 </span>
               </div>
-              {/* Segmented bar: one segment per 5% for a more instrument-like look. */}
               <div
                 className="flex gap-[3px]"
                 role="progressbar"

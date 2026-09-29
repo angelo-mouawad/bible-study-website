@@ -14,7 +14,6 @@ export interface SearchOptions {
 }
 
 export interface WordQuery {
-  /** Terms that must all appear. A quoted query becomes a single phrase term. */
   terms: string[];
   isPhrase: boolean;
 }
@@ -30,7 +29,6 @@ export function parseWordQuery(input: string): WordQuery | null {
 
 const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-/** Marks whole words that start with a term, so "love" marks "love" and "loved" but not "glove". */
 export function termPattern(terms: string[]): RegExp {
   return new RegExp(`\\b((?:${terms.map(escapeRegExp).join('|')})\\w*)`, 'gi');
 }

@@ -5,7 +5,6 @@ import { useToast } from '../ui/Toast';
 import { useStore } from '../../store/AppStore';
 import { parseBackup } from '../../services/storage';
 
-/** Everything is stored in this browser only, so offer a simple way to move it or keep a copy. */
 export function BackupPanel() {
   const { data, actions } = useStore();
   const toast = useToast();

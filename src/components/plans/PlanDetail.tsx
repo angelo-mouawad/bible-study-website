@@ -20,7 +20,6 @@ export function PlanDetail({ plan, focusDay, nav }: { plan: ReadingPlan; focusDa
 
   useEffect(() => {
     setPage(Math.max(0, Math.floor(plan.days.indexOf(featured) / PAGE_SIZE)));
-    // Only when switching plans or days from outside.
   }, [plan.id, focusDay]);
 
   const visible = useMemo(() => plan.days.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE), [plan.days, page]);

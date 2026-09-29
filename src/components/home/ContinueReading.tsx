@@ -6,7 +6,6 @@ import { useStore } from '../../store/AppStore';
 import { formatRef, nextChapter } from '../../utils/references';
 import type { Nav } from '../../types/nav';
 
-/** The hero tile: the actual words where the reader stopped, on a warm dark card. */
 export function ContinueReading({ nav }: { nav: Nav }) {
   const { data } = useStore();
   const loc = data.lastLocation ?? { book: 'GEN', chapter: 1, verse: undefined, translation: data.preferences.translation };

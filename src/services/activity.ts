@@ -6,14 +6,11 @@ const dayKey = (t: number) => {
 };
 
 export interface Activity {
-  /** Consecutive days with any reading, ending today or yesterday. */
   streak: number;
-  /** Chapters marked read on each of the last seven days, oldest first. */
   week: { label: string; count: number; isToday: boolean }[];
   todayCount: number;
 }
 
-/** Works from the timestamps already saved with chapters and plan days, so nothing extra is stored. */
 export function readingActivity(data: AppData, now = Date.now()): Activity {
   const perDay = new Map<string, number>();
   const active = new Set<string>();

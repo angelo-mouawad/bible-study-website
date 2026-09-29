@@ -14,7 +14,6 @@ interface Props {
   onSelect: (ref: ChapterRef) => void;
 }
 
-/** Two simple steps: choose a book, then a chapter. Big targets, no tiny dropdowns. */
 export function BookChapterPicker({ open, current, onClose, onSelect }: Props) {
   const { data } = useStore();
   const [book, setBook] = useState<BookId | null>(null);
