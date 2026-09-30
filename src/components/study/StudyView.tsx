@@ -47,7 +47,12 @@ export function StudyView({ tab, nav }: { tab: StudyTab; nav: Nav }) {
       <p className="mt-3 text-lg text-muted">Everything you have highlighted, written and saved, in one place.</p>
 
       <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
-        <div role="tablist" aria-label="Study sections" className="glass flex gap-1 rounded-full p-1.5" onKeyDown={onTabKey}>
+        <div
+          role="tablist"
+          aria-label="Study sections"
+          className="glass grid w-full grid-cols-3 gap-1 rounded-[22px] p-1.5 sm:inline-flex sm:w-auto sm:rounded-full"
+          onKeyDown={onTabKey}
+        >
           {TABS.map((t) => {
             const active = t.id === tab;
             return (
@@ -63,7 +68,7 @@ export function StudyView({ tab, nav }: { tab: StudyTab; nav: Nav }) {
                 aria-controls={`panel-${t.id}`}
                 tabIndex={active ? 0 : -1}
                 onClick={() => nav.go({ view: 'study', tab: t.id })}
-                className={`flex min-h-11 items-center gap-2 rounded-full px-3 text-[0.95rem] font-bold transition-all sm:px-4 ${
+                className={`flex min-h-14 min-w-0 flex-col items-center justify-center gap-0.5 rounded-[18px] px-1 text-[0.8125rem] font-bold transition-all sm:min-h-11 sm:flex-row sm:gap-2 sm:rounded-full sm:px-4 sm:text-[0.95rem] ${
                   active ? 'bg-cocoa text-paper shadow-[0_6px_16px_-6px_rgb(61_42_28/0.6)]' : 'text-muted hover:text-ink'
                 }`}
               >
@@ -74,7 +79,7 @@ export function StudyView({ tab, nav }: { tab: StudyTab; nav: Nav }) {
           })}
         </div>
         {booksWithItems.length > 1 && (
-          <div className="flex items-center gap-2">
+          <div className="flex w-full items-center gap-2 sm:w-auto">
             <label htmlFor="study-book" className="text-base text-muted">
               Book
             </label>
@@ -82,7 +87,7 @@ export function StudyView({ tab, nav }: { tab: StudyTab; nav: Nav }) {
               id="study-book"
               value={book}
               onChange={(e) => setBook(e.target.value)}
-              className="glass min-h-12 rounded-full px-4 text-base text-ink"
+              className="glass min-h-12 min-w-0 flex-1 rounded-full px-4 text-base text-ink sm:flex-none"
             >
               <option value="all">All books</option>
               {booksWithItems.map((b) => (

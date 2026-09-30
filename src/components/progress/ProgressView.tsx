@@ -37,7 +37,7 @@ export function ProgressView({ nav }: { nav: Nav }) {
         </p>
       </header>
 
-      <div className="grid gap-4 sm:gap-5 lg:grid-cols-12">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:gap-5 lg:grid-cols-12">
         <Panel title="Whole Bible" id="whole" className="lg:col-span-5">
           <Gauge value={p.fraction} display={`${pct}%`} label="of the Bible read" description={`${pct} percent of the Bible read`} />
         </Panel>

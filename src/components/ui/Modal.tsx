@@ -17,8 +17,15 @@ export function Modal({ open, onClose, title, children, size = 'small' }: ModalP
   useEffect(() => {
     const dialog = ref.current;
     if (!dialog) return;
-    if (open && !dialog.open) dialog.showModal();
-    if (!open && dialog.open) dialog.close();
+    const supported = typeof dialog.showModal === 'function';
+    if (open && !dialog.open) {
+      if (supported) dialog.showModal();
+      else dialog.setAttribute('open', '');
+    }
+    if (!open && dialog.open) {
+      if (supported) dialog.close();
+      else dialog.removeAttribute('open');
+    }
     if (!open) return;
     const root = document.documentElement;
     const previous = root.style.overflow;

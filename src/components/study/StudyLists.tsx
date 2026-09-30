@@ -26,7 +26,7 @@ const byBibleOrder = (a: { book: string; chapter: number; verse?: number }, b: {
 
 function SortToggle({ value, onChange }: { value: SortMode; onChange: (v: SortMode) => void }) {
   return (
-    <div className="mb-2 flex items-center gap-2 text-base">
+    <div className="mb-2 flex flex-wrap items-center gap-2 text-base">
       <span className="text-muted">Order:</span>
       {(['recent', 'bible'] as const).map((m) => (
         <button
@@ -34,7 +34,7 @@ function SortToggle({ value, onChange }: { value: SortMode; onChange: (v: SortMo
           type="button"
           aria-pressed={value === m}
           onClick={() => onChange(m)}
-          className={`min-h-10 rounded-full px-3 font-bold ${value === m ? 'bg-accent-soft text-accent' : 'text-muted hover:text-ink'}`}
+          className={`min-h-10 whitespace-nowrap rounded-full px-3 font-bold ${value === m ? 'bg-accent-soft text-accent' : 'text-muted hover:text-ink'}`}
         >
           {m === 'recent' ? 'Most recent' : 'Bible order'}
         </button>

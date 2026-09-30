@@ -53,7 +53,7 @@ export function HomeView({ nav }: { nav: Nav }) {
         </button>
       </header>
 
-      <div className="grid gap-4 sm:gap-5 lg:grid-cols-12">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 sm:gap-5 lg:grid-cols-12">
         <div className="lg:col-span-7">{isNew ? <StartPanel nav={nav} /> : <ContinueReading nav={nav} />}</div>
 
         <Panel title="Bible progress" id="gauge" className="lg:col-span-5 lg:row-span-2">

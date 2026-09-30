@@ -239,7 +239,7 @@ function Chapter({ book, chapter, route, nav, translationId }: ChapterProps) {
           <span className="block text-[0.8em] font-bold uppercase tracking-[0.14em] text-accent">{canon.name}</span>
           <span className="tabular block text-[3.4em] font-semibold tracking-[-0.04em]">{chapter}</span>
         </h1>
-        <div className="flex flex-wrap items-center gap-2 font-sans text-base">
+        <div className="flex w-full min-w-0 flex-wrap items-center gap-2 font-sans text-base sm:w-auto">
           <ChapterStatusControl value={status} onChange={(s) => actions.setChapterStatus({ book: book.id, chapter }, s)} />
           <button
             type="button"
